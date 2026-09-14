@@ -120,6 +120,7 @@ review: needs-user-review
 | --- | --- | --- |
 | EEH（FPS） | ~$1,920 | ≤$2k |
 | 電氣通 | ~$1,929–$1,989 | ≤$2k |
+| **CYE 中原** | **$1,980** | [列表](https://www.cyeshop.com/540-Tub-Washers) ≤$2k |
 | Broadway | ~$2,050 | 稍超 |
 | 豐澤 | ~$2,180 | 超 $2k 帶 |
 | 建議零售 | $2,880 | — |

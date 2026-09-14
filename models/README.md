@@ -1,15 +1,15 @@
 # models
 
-單機頁（2026-09-14）：
+| 檔案 | ≤$2k | 重點 |
+| --- | --- | --- |
+| `hitachi-ltl065sm00.md` | ✅ | 首選候選 |
+| `whirlpool-vemc65811.md` | ✅ CYE $1,880 | **並列** 850轉 |
+| `toshiba-aw-q751aph.md` | ✅ CYE $1,799 | 最平梯隊 |
+| `toshiba-aw-q801aph.md` | ✅ CYE $1,880 | 7kg＋1級 |
+| `hitachi-ltl07sm00.md` | ✅ CYE $1,980 | 2級玻璃蓋 |
+| `hitachi-ltl08sm00.md` | ❌／貼邊 | — |
+| `fortress-fjw75m25.md` | ✅ | 高排水 |
+| `fortress-fjw85m25.md` | ❌ | 建議淘汰 |
 
-| 檔案 | 狀態 | ≤$2k | 審核重點 |
-| --- | --- | --- | --- |
-| `hitachi-ltl065sm00.md` | complete | ✅ | 位闊、6.5kg 夠唔夠 — **首選** |
-| `hitachi-ltl07sm00.md` | complete | ✅ 視店 | 玻璃蓋值唔值換 2 級能源 |
-| `hitachi-ltl08sm00.md` | complete | ❌ | 超預算；接受 2 級？ |
-| `fortress-fjw75m25.md` | complete | ✅ | **高排水**、650 轉 |
-| `fortress-fjw85m25.md` | identified | ❌ | 建議淘汰 |
-
-日立官網單槽來源：https://www.hitachi-homeappliances.com.hk/tc/products/single-tub.html
-
+價源：[[../2026-09-14-cyeshop-under-2000|CYE 掃瞄]]  
 新機：複製 `../_model-template.md`。
