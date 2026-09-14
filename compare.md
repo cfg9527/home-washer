@@ -1,7 +1,7 @@
 ---
 type: record
 title: 洗衣機總比較表
-date: 2026-09-12
+date: 2026-09-14
 tags:
   - washer
   - compare
@@ -9,7 +9,8 @@ tags:
 related:
   - "[[index|洗衣機比較]]"
 location: Hong Kong
-store: Fortress 豐澤
+store: Fortress 豐澤 / CYE 中原
+review: needs-user-review
 ---
 
 # 洗衣機總比較表
@@ -18,74 +19,90 @@ store: Fortress 豐澤
 
 ← [[index|洗衣機比較]]
 
-**場景：** 香港 · 豐澤店內影相（2026-09）  
-**類型：** 全部係 **日式上置式（波輪）**，唔係前置滾筒。  
-**Air Jet Dry：** 只係輔助風乾／減濕，**唔係熱力乾衣機**（EMSD 全部標「無內置乾衣」）。
+**場景：** 豐澤店相＋[日立單槽](https://www.hitachi-homeappliances.com.hk/tc/products/single-tub.html)＋[CYE ≤$2k](https://www.cyeshop.com/540-Tub-Washers)  
+**類型：** 日式上置／葉輪（波輪）；Air Jet ≠ 熱力乾衣。  
+**論壇：** [[2026-09-14-baby-kingdom-search|BK 筆記]] · **價掃：** [[2026-09-14-cyeshop-under-2000|CYE ≤$2k]]
 
-## 短名單（建議優先睇）
+## CYE ≤$2,000（新增）
+
+| CYE 價 | 機 | 一句 |
+| --- | --- | --- |
+| $1,799 | [[models/toshiba-aw-q751aph\|Toshiba AW-Q751APH]] | 6.5 · 1級 · 高低 · **680轉** |
+| $1,880 | [[models/toshiba-aw-q801aph\|Toshiba AW-Q801APH]] | 7.0 · 1級 · 高低 · 680轉 |
+| $1,880 | [[models/whirlpool-vemc65811\|Whirlpool VEMC65811]] | 6.5 · 1級 · **850轉** · 500mm |
+| $1,980 | [[models/hitachi-ltl07sm00\|Hitachi LTL 07SM00]] | 7.0 · **2級** · 玻璃蓋 |
+| $2,080 | [[models/hitachi-ltl08sm00\|LTL 08SM00]] | 稍超帶 |
+
+## 短名單（一人用 · ≤$2k）
 
 | 優先 | 機 | 一句 |
 | --- | --- | --- |
-| ★★★ | [[models/hitachi-ltl065sm00\|Hitachi LTL 065SM00]] | 最窄＋1級水電＋830轉＋$1,880 |
-| ★★★ | [[models/fortress-fjw75m25\|Fortress FJW75M25]] | 最平＋7.5kg＋1級；轉速弱、確認高排水 |
-| ★★☆ | [[models/hitachi-ltl08sm00\|Hitachi LTL 08SM00]] | 8kg＋玻璃蓋＋品牌；**能源 2 級、水 127L** |
-| ★☆☆ | [[models/fortress-fjw85m25\|Fortress FJW85M25]] | 最大 8.5kg；650轉、價錢未必抵 |
+| ★★★ | [[models/hitachi-ltl065sm00\|Hitachi LTL 065SM00]] | 首選候選 — 500mm＋1級＋830＋Air Jet |
+| ★★★ | [[models/whirlpool-vemc65811\|Whirlpool VEMC65811]] | **並列** — 500mm＋850＋Esp 更低＋CYE $1,880 |
+| ★★☆ | [[models/toshiba-aw-q801aph\|Toshiba AW-Q801APH]] | 7kg＋1級＋$1,880；680轉 |
+| ★★☆ | [[models/toshiba-aw-q751aph\|Toshiba AW-Q751APH]] | 最平 $1,799；680轉 |
+| ★★☆ | [[models/hitachi-ltl07sm00\|Hitachi LTL 07SM00]] | CYE $1,980 玻璃蓋；2 級 |
+| ★★☆ | [[models/fortress-fjw75m25\|Fortress FJW75M25]] | $1,780；高排水要確認 |
+| ★☆☆ | [[models/hitachi-ltl08sm00\|Hitachi LTL 08SM00]] | CYE $2,080；2 級 |
+| — | [[models/fortress-fjw85m25\|Fortress FJW85M25]] | 建議淘汰 |
 
-## 基本規格對照
+## 基本規格對照（≤$2k 核心）
 
-| 項目 | A · LTL 065SM00 | B · LTL 08SM00 | C · FJW75M25 | D · FJW85M25 |
-| --- | --- | --- | --- | --- |
-| 品牌 | Hitachi | Hitachi | Fortress | Fortress |
-| 容量 | **6.5 kg** | **8.0 kg** | **7.5 kg** | **8.5 kg** |
-| 脫水 | **830 rpm** | **760 rpm** | 650 rpm | 650 rpm |
-| 闊×高×深 (mm) | **500×850×535**（連喉深~560） | **540×892×565**（連喉~610×615） | ~520–525×915–930×515–530（價牌） | 待官方尺寸 |
-| 能源級 | **1** | **2** ⚠️ | **1** | **1** |
-| 年耗電 (kWh) | **15** | 22 | 16 | 18 |
-| 標準耗水 (L) | **85** | 127 | **88** | 97 |
-| Esp | 0.00890 | 0.01030 | **0.00800** | 0.00820 |
-| Air Jet | 1.5 kg | 2.0 kg | 無 | 無 |
-| 排水 | 高低一機 | 高低一機 | 價牌：**高排水** ⚠️ | 待確認 |
-| 保用 | 2 年 | 2 年 | 2 年 | 2 年（典型） |
-| 店內／參考價 | **$1,880** | **$2,180** | **$1,780** | ~$2,200–$2,588 |
-| 單機筆記 | [[models/hitachi-ltl065sm00\|開]] | [[models/hitachi-ltl08sm00\|開]] | [[models/fortress-fjw75m25\|開]] | [[models/fortress-fjw85m25\|開]] |
+| 項目 | 065 | **VEMC** | **Q751** | **Q801** | 07 | FJW75 |
+| --- | --- | --- | --- | --- | --- | --- |
+| 品牌 | Hitachi | Whirlpool | Toshiba | Toshiba | Hitachi | Fortress |
+| 容量 kg | 6.5 | 6.5 | 6.5 | **7.0** | 7.0 | 7.5 |
+| 脫水 | 830 | **850** | 680 | 680 | 760 | 650 |
+| 闊 mm | **500** | **500** | 515 | 515 | 540 | ~520 |
+| 能源 | **1** | **1** | **1** | **1** | **2** | **1** |
+| 年 kWh | 15 | **13** | 16 | 15 | 19 | 16 |
+| 耗水 L | **85** | 87 | 98 | 92 | 111 | 88 |
+| Esp | 0.00890 | **0.00770** | 0.00920 | 0.00830 | 0.01050 | 0.00800 |
+| 排水 | 高低 | 高低 | 高低 | 高低 | 高低 | 高⚠️ |
+| 價 | ~$1,880 | **CYE $1,880** | **$1,799** | **$1,880** | **$1,980** | $1,780 |
+| 開 | [[models/hitachi-ltl065sm00\|→]] | [[models/whirlpool-vemc65811\|→]] | [[models/toshiba-aw-q751aph\|→]] | [[models/toshiba-aw-q801aph\|→]] | [[models/hitachi-ltl07sm00\|→]] | [[models/fortress-fjw75m25\|→]] |
 
-來源重點：[EMSD Energy Label Net](https://www.emsd.gov.hk/energylabel/)（U3-W250072 / U3-W250033 / U3-W250157 / U3-W250158）＋店內貼紙／價牌。
-
-## 功能對照
-
-| 功能 | LTL 065 | LTL 08 | FJW75 | FJW85 |
-| --- | --- | --- | --- | --- |
-| Smart／負重感應 | ✓ | ✓ | 一鍵智慧（宣傳） | 類似自有牌 |
-| Air Jet | ✓ | ✓ | — | — |
-| 強化玻璃蓋 | —（塑膠／摺蓋） | ✓ | 透視蓋 | 透視蓋 |
-| 快洗 | ~10′ | ~19′ | ~15′ | 有 |
-| 半量程式 | 有（規格） | ~28′ | — | — |
-| 兒童鎖 | ✓ | ✓ | 常見 | 常見 |
-| 筒清洗 | ✓ | ✓ | ✓ | ✓ |
+EMSD：U3-W250072 / U3-W240039 / U3-W250105 / U3-W250106 / U3-W250032 / U3-W250157。
 
 ## 現場相片索引
 
 | 檔 | 對應 |
 | --- | --- |
 | [[photos/A-hitachi-ltl065sm00-front\|A]] | Hitachi 6.5 |
-| [[photos/B-hitachi-ltl08sm00-top\|B]] | Hitachi 8.0（旁有 8.5 豐澤） |
-| [[photos/C-shelf-three-machines\|C]] | 左 Hitachi 8 · 中豐澤 8.5 · 右豐澤 7.5 |
-| [[photos/D-fortress-75-top\|D]] | 豐澤 7.5 俯視 |
-| [[photos/E-fortress-fjw75m25-panel\|E]] | FJW75M25 控制板＋價牌 |
+| [[photos/B-hitachi-ltl08sm00-top\|B]] | Hitachi 8.0 |
+| [[photos/C-shelf-three-machines\|C]] | 左 8 · 中豐澤 8.5 · 右豐澤 7.5 |
+| [[photos/D-fortress-75-top\|D]] / [[photos/E-fortress-fjw75m25-panel\|E]] | FJW75 |
 
-## 暫時結論（等你答grilling先定案）
+## 用戶條件
 
-| 面向 | 暫時勝出 | 原因 |
-| --- | --- | --- |
-| 位窄／慳水電 | **LTL 065SM00** | 500mm、1級、85L、830轉 |
-| 價錢 | **FJW75M25** | $1,780 |
-| 容量＋品牌手感 | **LTL 08SM00** | 8kg＋玻璃蓋；忍能源2級 |
-| 最大容量 | FJW85M25 | 8.5kg；轉速弱 |
-| 整體（未答問題前） | **065 同 75 並列短名單** | 視乎人數、排水、闊度 |
+| 項目 | 答案 |
+| --- | --- |
+| 人數 | ✅ **一人用** |
+| 預算 | ✅ **≤ ~$2,000**（已擴至 CYE 全場） |
+| 位闊／排水／厚被 | ⏳ 未答 |
 
-## 分析備註（易踩坑）
+## 暫時結論（一人用 · ≤$2k）
 
-1. 零售廣告有時寫 LTL 08SM00「1級能源」——**官方係 2 級**。
-2. 店內尺寸貼紙偶有錯（08SM00 高標 950）——以代理規格為準。
-3. 豐澤 FJW75 價牌寫高排水——**低排水單位要問可唔可以裝**。
-4. 香港晾衫：轉速差 180 rpm（830 vs 650）體感可以好大，尤其回南天。
+| 面向 | 暫時勝出 |
+| --- | --- |
+| **並列首選** | **LTL 065** vs **VEMC65811**（量位後二揀一） |
+| 要 7kg＋1 級 | **Toshiba Q801**（$1,880）優於 LTL 07（2 級） |
+| 最平 | **Q751 $1,799** 或 FJW75（確認排水） |
+| 玻璃蓋執著 | LTL 07（CYE $1,980） |
+
+**定案方向：** 先量位 → **065 定惠而浦**；要多 0.5–1 kg 先睇東芝 Q801。
+
+## 用戶審核（仲差）
+
+1. 位闊（mm）？  
+2. 去水位高／低？  
+3. 品牌偏好：日立 / 惠而浦 / 東芝？  
+4. 要唔要玻璃蓋（值得換 2 級）？  
+5. FJW85 淘汰同意？
+
+## 易踩坑
+
+1. LTL 07／08 零售常誤標 1 級 → EMSD **2 級**。  
+2. FJW75 價牌高排水要問清楚。  
+3. 東芝 **680 轉**晾衫慢過 830／850。  
+4. CYE 價會浮動；落訂前再確認。
