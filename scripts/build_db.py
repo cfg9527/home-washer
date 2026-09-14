@@ -58,14 +58,31 @@ CREATE TABLE sources (
   note          TEXT
 );
 
+CREATE TABLE tco_5y (
+  id              INTEGER PRIMARY KEY,
+  model_id        INTEGER REFERENCES models(id) ON DELETE CASCADE,
+  slug            TEXT NOT NULL UNIQUE,
+  price_hkd       REAL NOT NULL,
+  risk_tier       TEXT NOT NULL,   -- A..G
+  p_fail_5y       REAL NOT NULL,
+  repair_cost_hkd REAL NOT NULL,
+  expected_repair REAL NOT NULL,
+  install_extra   REAL NOT NULL,
+  energy_5y_hkd   REAL NOT NULL,
+  tco_hkd         REAL NOT NULL,
+  note            TEXT
+);
+
 CREATE VIEW v_shortlist AS
 SELECT
   m.slug, m.brand, m.model, m.capacity_kg, m.spin_rpm, m.width_mm,
   m.energy_grade, m.annual_kwh, m.water_l, m.esp, m.drain, m.shortlist,
   m.under_2000,
-  MIN(p.price_hkd) AS min_price_hkd
+  MIN(p.price_hkd) AS min_price_hkd,
+  t.tco_hkd AS tco_5y_hkd
 FROM models m
 LEFT JOIN prices p ON p.model_id = m.id
+LEFT JOIN tco_5y t ON t.model_id = m.id
 GROUP BY m.id
 ORDER BY
   CASE m.shortlist
@@ -76,39 +93,40 @@ ORDER BY
     WHEN 'drop' THEN 5
     ELSE 9
   END,
-  min_price_hkd;
+  COALESCE(t.tco_hkd, min_price_hkd);
+
 """
 
 # Curated rows from compare / model pages (2026-09-14)
 MODELS = [
     # slug, brand, model, cap, rpm, w, h, d, grade, kwh, water, esp, drain, air_jet, glass, status, shortlist, u2k, emsd, notes, md
     (
+        "toshiba-aw-q801aph", "Toshiba", "AW-Q801APH(WW)",
+        7.0, 680, 515, 940, 525, 1, 15, 92, 0.00830, "high_low", None, 1,
+        "complete", "primary", 1, "U3-W250106",
+        "User ref PRIMARY: Toshiba pulsator MTBF/parts; CYE $1880",
+        "models/toshiba-aw-q801aph.md",
+    ),
+    (
         "hitachi-ltl065sm00", "Hitachi", "LTL 065SM00",
         6.5, 830, 500, 850, 535, 1, 15, 85, 0.00890, "high_low", 1.5, 0,
-        "complete", "primary", 1, "U3-W250072",
-        "One-person primary candidate; narrowest Hitachi; Air Jet 1.5kg",
+        "complete", "alt", 1, "U3-W250072",
+        "Spec strong; demoted from primary per user ref assumption-1 brand premium risk",
         "models/hitachi-ltl065sm00.md",
     ),
     (
         "whirlpool-vemc65811", "Whirlpool", "VEMC65811",
         6.5, 850, 500, 890, 530, 1, 13, 87, 0.00770, "high_low", None, 1,
-        "complete", "primary", 1, "U3-W240039",
-        "CYE $1880; rivals 065 on spin/Esp; 500mm",
+        "complete", "alt", 1, "U3-W240039",
+        "CYE $1880; demoted per user ref assumption-3 belt/humidity risk",
         "models/whirlpool-vemc65811.md",
     ),
     (
         "toshiba-aw-q751aph", "Toshiba", "AW-Q751APH(WW)",
         6.5, 680, 515, 940, 525, 1, 16, 98, 0.00920, "high_low", None, 1,
         "complete", "alt", 1, "U3-W250105",
-        "CYE $1799 cheapest Grade-1 band; weak spin",
+        "CYE $1799 cheapest Toshiba Grade-1 band; weak spin",
         "models/toshiba-aw-q751aph.md",
-    ),
-    (
-        "toshiba-aw-q801aph", "Toshiba", "AW-Q801APH(WW)",
-        7.0, 680, 515, 940, 525, 1, 15, 92, 0.00830, "high_low", None, 1,
-        "complete", "alt", 1, "U3-W250106",
-        "CYE $1880; 7kg + Grade 1 better value than LTL 07",
-        "models/toshiba-aw-q801aph.md",
     ),
     (
         "hitachi-ltl07sm00", "Hitachi", "LTL 07SM00",
@@ -120,9 +138,30 @@ MODELS = [
     (
         "fortress-fjw75m25", "Fortress", "FJW75M25",
         7.5, 650, 522, 920, 520, 1, 16, 88, 0.00800, "high", None, 0,
-        "complete", "alt", 1, "U3-W250157",
-        "Cheapest; confirm high drain; dims from price tag approx",
+        "complete", "demote", 1, "U3-W250157",
+        "High drain risk + white-label parts risk per user ref assumption-2",
         "models/fortress-fjw75m25.md",
+    ),
+    (
+        "sharp-es-hk750x-w", "Sharp", "ES-HK750X-W",
+        7.5, 700, 530, 917, 550, 1, 18, 120, 0.00930, "high_low", None, 1,
+        "complete", "alt", 1, "U3-W250082",
+        "Suning $1980; 7.5kg glass lid; high water 120L — capacity alt only",
+        "models/sharp-es-hk750x-w.md",
+    ),
+    (
+        "midea-mj70n68p", "Midea", "MJ70N68P",
+        7.0, 680, 515, 910, 525, 2, 23, 92, 0.01260, "high_low", None, 1,
+        "complete", "alt", 1, "U3-W210074",
+        "Electric Tung ~$1842–1899; Grade 2; loses to Q801 in same band",
+        "models/midea-mj70n68p.md",
+    ),
+    (
+        "toshiba-aw-m731aph", "Toshiba", "AW-M731APH(WW)",
+        6.3, 700, 515, 920, 525, 4, 24, 93, 0.01460, "high_low", None, 1,
+        "complete", "demote", 1, "U3-W220055",
+        "Ecox $1780; EMSD Grade 4 — retailers often wrongly claim Grade 1",
+        "models/toshiba-aw-m731aph.md",
     ),
     (
         "hitachi-ltl08sm00", "Hitachi", "LTL 08SM00",
@@ -143,17 +182,39 @@ MODELS = [
 PRICES = [
     # slug, channel, price, list, date, url, note
     ("hitachi-ltl065sm00", "Fortress in-store", 1880, 2580, "2026-09-12", None, "Photo price tag"),
+    ("hitachi-ltl065sm00", "Suning", 1800, None, "2026-09-14",
+     "https://product.hksuning.com/0000000000/12449132770.html", "Best seen street for 065"),
     ("whirlpool-vemc65811", "CYE", 1880, 2798, "2026-09-14", "https://www.cyeshop.com/540-Tub-Washers", None),
+    ("whirlpool-vemc65811", "Suning", 1880, None, "2026-09-14",
+     "https://product.hksuning.com/0000000000/12436797185.html", None),
     ("toshiba-aw-q751aph", "CYE", 1799, 2880, "2026-09-14", "https://www.cyeshop.com/540-Tub-Washers", None),
+    ("toshiba-aw-q751aph", "Suning", 1930, None, "2026-09-14",
+     "https://product.hksuning.com/0000000000/12449552608.html", "Listing wrongly says 6.3kg/715rpm"),
     ("toshiba-aw-q801aph", "CYE", 1880, 3380, "2026-09-14",
      "https://www.cyeshop.com/Tub-Washers/10760-12968-%E6%9D%B1%E8%8A%9D-toshiba-aw-q801aphww-7%E5%85%AC%E6%96%A4-%E6%97%A5%E5%BC%8F%E6%B4%97%E8%A1%A3%E6%A9%9F-%E7%B5%90%E5%90%88%E9%AB%98%E4%BD%8E%E6%B0%B4%E4%BD%8D.html",
      None),
+    ("toshiba-aw-q801aph", "Suning", 1880, None, "2026-09-14",
+     "https://product.hksuning.com/0000000000/12449552609.html", None),
     ("hitachi-ltl07sm00", "CYE", 1980, 2880, "2026-09-14", "https://www.cyeshop.com/540-Tub-Washers", None),
     ("hitachi-ltl07sm00", "EEH FPS", 1920, 2880, "2026-09-14", "https://www.eeh.hk/LTL07SM00WH", None),
     ("hitachi-ltl07sm00", "Fortress", 2180, 2880, "2026-09-14", None, "Often over $2k"),
+    ("sharp-es-hk750x-w", "Suning", 1980, None, "2026-09-14",
+     "https://product.hksuning.com/0000000000/12449238826.html", None),
+    ("midea-mj70n68p", "Electric Tung FPS", 1842, 2789, "2026-09-14",
+     "https://www.electrictung.com/tub-washers/mj70n68p", "Other pay ~$1899"),
+    ("midea-mj70n68p", "The Club", 1798, 2789, "2026-09-14",
+     "https://shop.theclub.com.hk/midea-7kg-automatic-tub-washer-combined-drain-pump-included-standard-installation-mj70n68p-cr-mj70n68p",
+     "Points+cash listing"),
+    ("toshiba-aw-m731aph", "Ecox", 1780, 2780, "2026-09-14",
+     "https://ecox.com.hk/shop/hk/toshiba-aw-m731aph-ww-automatic-tub-washer-6-3kg-combined-drain-pump.html",
+     "Suning/YOHO delisted"),
+    ("toshiba-aw-m731aph", "Usave", 1950, None, "2026-09-14",
+     "https://www.usave.com.hk/index.php?main_page=product_info&products_id=6618", None),
     ("fortress-fjw75m25", "Fortress in-store", 1780, 2890, "2026-09-12", None, "Photo price tag"),
     ("hitachi-ltl08sm00", "Fortress in-store", 2180, 3180, "2026-09-12", None, "Photo"),
     ("hitachi-ltl08sm00", "CYE", 2080, 3180, "2026-09-14", "https://www.cyeshop.com/540-Tub-Washers", None),
+    ("hitachi-ltl08sm00", "Suning", 2380, None, "2026-09-14",
+     "https://product.hksuning.com/0000000000/12446695975.html", "Over $2k"),
     ("fortress-fjw85m25", "Fortress web", 2200, 3099, "2026-09-14", None, "List price band"),
 ]
 
@@ -162,6 +223,8 @@ SOURCES = [
      "https://www.hitachi-homeappliances.com.hk/tc/products/single-tub.html", None),
     (None, "retailer", "CYE Tub Washers",
      "https://www.cyeshop.com/540-Tub-Washers", "Price-asc category URL blocked bots"),
+    (None, "retailer", "Suning washers $1400-2800",
+     "https://search.hksuning.com/search/list?ci=503369&cf=1400_2800", "2026-09-14 scrape"),
     (None, "forum", "Baby Kingdom search notes",
      "https://www.baby-kingdom.com/", "No exact model threads"),
     ("hitachi-ltl065sm00", "emsd", "EMSD U3-W250072",
@@ -180,6 +243,39 @@ SOURCES = [
      "https://www.emsd.gov.hk/energylabel/en/households/wm/select_wm_detail.php?refid=U3-W250157", None),
     ("fortress-fjw85m25", "emsd", "EMSD U3-W250158",
      "https://www.emsd.gov.hk/energylabel/en/households/wm/select_wm_detail.php?refid=U3-W250158", None),
+    ("sharp-es-hk750x-w", "emsd", "EMSD U3-W250082",
+     "https://www.emsd.gov.hk/energylabel/en/households/wm/select_wm_detail.php?refid=U3-W250082", None),
+    ("midea-mj70n68p", "emsd", "EMSD U3-W210074",
+     "https://www.emsd.gov.hk/energylabel/en/households/wm/select_wm_detail.php?refid=U3-W210074", None),
+    ("toshiba-aw-m731aph", "emsd", "EMSD U3-W220055",
+     "https://www.emsd.gov.hk/energylabel/en/households/wm/select_wm_detail.php?refid=U3-W220055", None),
+    (None, "retailer", "Midea/Toshiba ≤$2k scan notes",
+     None, "2026-09-14-midea-toshiba-under-2000.md"),
+    (None, "forum", "Consumer Council #513 washer reliability",
+     "https://www.consumer.org.hk/tc/article/513-appliance-reliability-survey/513-survey-wm",
+     "Panasonic 16% / Whirlpool 28%; avg repair $1083; type gap slight"),
+]
+
+# slug, price, tier, p, C, I, annual_kwh, note
+# expected_repair = p*C; energy = annual_kwh*5*1.2; tco = P + pC + I + energy
+TCO_ROWS = [
+    ("toshiba-aw-q751aph", 1799, "A", 0.10, 900, 0, 16,
+     "Cheapest Toshiba TCO band"),
+    ("toshiba-aw-q801aph", 1880, "A", 0.10, 900, 0, 15,
+     "PRIMARY; parts liquidity"),
+    ("toshiba-aw-m731aph", 1780, "C", 0.12, 900, 0, 24,
+     "Grade 4 energy penalty in E"),
+    ("hitachi-ltl065sm00", 1800, "B", 0.11, 1200, 0, 15,
+     "OEM board premium in C"),
+    ("midea-mj70n68p", 1842, "E", 0.15, 900, 0, 23, None),
+    ("whirlpool-vemc65811", 1880, "D", 0.16, 1080, 0, 13,
+     "p=0.16 from CC #513 5y fail"),
+    ("fortress-fjw75m25", 1780, "F", 0.22, 1000, 100, 16,
+     "White-label + high-drain install risk"),
+    ("hitachi-ltl07sm00", 1980, "B", 0.11, 1200, 0, 19, None),
+    ("sharp-es-hk750x-w", 1980, "C", 0.12, 1000, 0, 18, None),
+    ("hitachi-ltl08sm00", 2080, "B", 0.11, 1200, 0, 22, None),
+    ("fortress-fjw85m25", 2200, "F", 0.22, 1000, 100, 18, None),
 ]
 
 
@@ -234,14 +330,31 @@ def main() -> None:
             (mid, kind, title, url, note),
         )
 
+    for slug, price, tier, p, c, install, kwh, note in TCO_ROWS:
+        exp = round(p * c)
+        energy = round(kwh * 5 * 1.2)
+        tco = round(price + exp + install + energy)
+        con.execute(
+            """
+            INSERT INTO tco_5y (
+              model_id, slug, price_hkd, risk_tier, p_fail_5y, repair_cost_hkd,
+              expected_repair, install_extra, energy_5y_hkd, tco_hkd, note
+            ) VALUES (?,?,?,?,?,?,?,?,?,?,?)
+            """,
+            (slug_ids[slug], slug, price, tier, p, c, exp, install, energy, tco, note),
+        )
+
     con.commit()
 
     n_models = con.execute("SELECT COUNT(*) FROM models").fetchone()[0]
     n_prices = con.execute("SELECT COUNT(*) FROM prices").fetchone()[0]
-    print(f"Wrote {DB_PATH.name}: {n_models} models, {n_prices} prices")
-    print("\nShortlist view:")
-    for r in con.execute("SELECT slug, shortlist, min_price_hkd, spin_rpm, energy_grade FROM v_shortlist"):
-        print(f"  {r[0]:28} {r[1]:8} ${r[2] or '-':>6}  {r[3]}rpm  G{r[4]}")
+    n_tco = con.execute("SELECT COUNT(*) FROM tco_5y").fetchone()[0]
+    print(f"Wrote {DB_PATH.name}: {n_models} models, {n_prices} prices, {n_tco} TCO rows")
+    print("\nShortlist by TCO:")
+    for r in con.execute(
+        "SELECT slug, shortlist, min_price_hkd, tco_5y_hkd FROM v_shortlist ORDER BY tco_5y_hkd NULLS LAST"
+    ):
+        print(f"  {r[0]:28} {r[1]:8} P=${r[2] or '-':>6}  TCO₅=${r[3] or '-':>6}")
     con.close()
 
 
