@@ -22,6 +22,7 @@ tags:
 | --- | --- |
 | [[compare\|總比較表]] | 短名單＋規格 |
 | [[2026-09-14-cyeshop-under-2000\|CYE ≤$2k 掃瞄]] | 中原電器價源 |
+| `home-washer.sqlite` | SQLite（`python3 scripts/build_db.py`） |
 | [[models/hitachi-ltl065sm00\|Hitachi LTL 065SM00]] | 6.5 · 830 · 首選候選 |
 | [[models/whirlpool-vemc65811\|Whirlpool VEMC65811]] | 6.5 · 850 · **並列比較** |
 | [[models/toshiba-aw-q751aph\|Toshiba AW-Q751APH]] | 6.5 · 680 · CYE $1,799 |
