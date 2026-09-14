@@ -28,6 +28,7 @@ tags:
 | [[models/fortress-fjw85m25\|Fortress FJW85M25]] | 8.5kg · 650轉 · ~$2.2k+ |
 | [[photos/README\|相片區]] | 原圖 A–E |
 | [[2026-09-12-washer-photo-intake\|相片分析流程]] | 過程筆記 |
+| [[2026-09-14-baby-kingdom-search\|Baby Kingdom 搜尋]] | 論壇口碑（無精確型號帖） |
 
 ## 候選機一覽
 
