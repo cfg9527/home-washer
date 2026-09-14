@@ -11,6 +11,7 @@ related:
   - "[[compare|總比較表]]"
   - "[[models/toshiba-aw-q801aph|AW-Q801APH]]"
   - "[[index|洗衣機比較]]"
+  - "[[2026-09-14-data-checkpoints|資料篩選三關]]"
 review: user-provided
 ---
 
@@ -94,4 +95,5 @@ review: user-provided
 | Toshiba M731 | demote | demote（4 級） |
 | J800 系 | — | **watch**（超／貼 $2k） |
 
-耐用度數據同各機 **5 年 TCO** 見 [[2026-09-14-durability-tco]]。
+耐用度數據同各機 **5 年 TCO** 見 [[2026-09-14-durability-tco]]。  
+入庫／核實／決策三關見 [[2026-09-14-data-checkpoints]]。

@@ -483,6 +483,95 @@
     }
     .notes li::marker { font-weight: 700; color: var(--accent); }
 
+    /* —— Checkpoints —— */
+    .cp-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .cp-card {
+      display: block;
+      width: 100%;
+      background: var(--white);
+      border: 1px solid var(--line);
+      padding: 1.25rem 1.2rem 1.35rem;
+      text-align: left;
+      font: inherit;
+      color: inherit;
+      cursor: pointer;
+      transition: border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
+    }
+    .cp-card:hover, .cp-card:focus-visible {
+      border-color: #b7c8c7;
+      box-shadow: 0 12px 32px rgba(18, 32, 43, 0.06);
+      outline: none;
+    }
+    .cp-card.is-active {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px var(--accent);
+    }
+    .cp-kicker {
+      font-family: var(--font-display);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+    .cp-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.12rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      margin-bottom: 0.4rem;
+    }
+    .cp-card p { font-size: 0.9rem; color: var(--ink-soft); }
+    .cp-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+      margin-bottom: 0.85rem;
+    }
+    .cp-filter {
+      min-height: 2.15rem;
+      padding: 0 0.8rem;
+      border: 1px solid var(--line);
+      background: var(--white);
+      color: var(--ink);
+      font-family: var(--font-display);
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .cp-filter.is-active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--white);
+    }
+    .cp-count {
+      margin-left: auto;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+    .pill {
+      display: inline-block;
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 0.18rem 0.42rem;
+    }
+    .pill-pass { background: #e3f2e8; color: var(--ok); }
+    .pill-watch { background: var(--warn-soft); color: var(--warn); }
+    .pill-fail { background: #f5e3e3; color: var(--danger); }
+    tr[hidden] { display: none; }
+
     /* —— Footer —— */
     footer {
       padding: 2.5rem 0 3rem;
@@ -511,6 +600,8 @@
       .vs { padding: 0.25rem 0; }
       .photos { grid-template-columns: 1fr 1fr; }
       .photo-frame.wide { grid-row: auto; grid-column: 1 / -1; }
+      .cp-grid { grid-template-columns: 1fr; }
+      .cp-count { margin-left: 0; width: 100%; }
     }
     @media (max-width: 560px) {
       .brief-grid { grid-template-columns: 1fr; }
@@ -537,6 +628,7 @@
         <div class="nav-links">
           <a href="#duel">短名單</a>
           <a href="#ref">決策軸</a>
+          <a href="#checkpoints">三關</a>
           <a href="#tco">TCO</a>
           <a href="#compare">對照表</a>
           <a href="#alts">備選</a>
@@ -665,6 +757,158 @@
             <div class="alt-desc">Panasonic 毛病 16%／惠而浦 28%（5 年故障 16%）；均修 ≈$1,083。類型差距輕微 — 波輪優勢靠力學／環境論。</div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="checkpoints">
+    <div class="wrap">
+      <p class="section-label">Data checkpoints</p>
+      <h2 class="section-title">資料篩選三關</h2>
+      <p class="section-lead">街市列表先過入場關，規格以 EMSD 蓋過零售誤標，最後先用 MTBF／零件決策。點卡片或濾按鈕睇邊關未過。規則全文 <a href="2026-09-14-data-checkpoints.md">2026-09-14-data-checkpoints.md</a>。</p>
+
+      <div class="cp-grid" role="group" aria-label="三關說明，點擊篩選未過關機">
+        <button type="button" class="cp-card" data-cp-filter="cp1" aria-pressed="false">
+          <div class="cp-kicker">CP1 · 入場關</div>
+          <h3>類型／預算／一人用</h3>
+          <p>只要日式上置葉輪、街價 ≤$2k（$2.2k 列 watch）、6–7.5kg、有 EMSD 編號。前置、洗乾、>8kg 直接唔入庫。</p>
+        </button>
+        <button type="button" class="cp-card" data-cp-filter="cp2" aria-pressed="false">
+          <div class="cp-kicker">CP2 · 核實關</div>
+          <h3>EMSD 為準，零售當線索</h3>
+          <p>能源／容量／耗水綁能源標籤。蘇寧 Q751 6.3kg、M731「1 級」等誤標一律蓋過。缺闊或排水 = 未齊。</p>
+        </button>
+        <button type="button" class="cp-card" data-cp-filter="cp3" aria-pressed="false">
+          <div class="cp-kicker">CP3 · 決策關</div>
+          <h3>三假設＋零件流通</h3>
+          <p>避開日系溢價迷信、白牌、平價皮帶。能源 ≥3 級淘汰。東芝 Q 系先可入主鎖排序。</p>
+        </button>
+      </div>
+
+      <div class="cp-toolbar">
+        <button type="button" class="cp-filter is-active" data-cp-filter="all" aria-pressed="true">全部</button>
+        <button type="button" class="cp-filter" data-cp-filter="pass" aria-pressed="false">三關全過</button>
+        <button type="button" class="cp-filter" data-cp-filter="cp1" aria-pressed="false">入場問題</button>
+        <button type="button" class="cp-filter" data-cp-filter="cp2" aria-pressed="false">核實問題</button>
+        <button type="button" class="cp-filter" data-cp-filter="cp3" aria-pressed="false">決策問題</button>
+        <span class="cp-count" data-cp-count aria-live="polite"></span>
+      </div>
+
+      <div class="table-wrap" role="region" aria-label="三關過關表" tabindex="0">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">機</th>
+              <th scope="col">低價</th>
+              <th scope="col">CP1</th>
+              <th scope="col">CP2</th>
+              <th scope="col">CP3</th>
+              <th scope="col">總評</th>
+              <th scope="col">要睇</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-cp-row data-slug="toshiba-aw-q801aph" data-cp1="pass" data-cp2="pass" data-cp3="pass" data-overall="pass">
+              <td><a href="models/toshiba-aw-q801aph.md">Toshiba Q801</a></td>
+              <td class="num">$1,880</td>
+              <td><span class="pill pill-pass">pass</span></td>
+              <td><span class="pill pill-pass">pass</span></td>
+              <td><span class="pill pill-pass">pass</span></td>
+              <td><span class="pill pill-pass">pass</span></td>
+              <td>三關全過 · 主鎖</td>
+            </tr>
+            <tr data-cp-row data-slug="toshiba-aw-q751aph" data-cp1="pass" data-cp2="watch" data-cp3="pass" data-overall="watch">
+              <td><a href="models/toshiba-aw-q751aph.md">Toshiba Q751</a></td>
+              <td class="num">$1,799</td>
+              <td><span class="pill pill-pass">pass</span></td>
+              <td><span class="pill pill-watch">watch</span></td>
+              <td><span class="pill pill-pass">pass</span></td>
+              <td><span class="pill pill-watch">watch</span></td>
+              <td>蘇寧標題 6.3kg／715 轉 — 以 EMSD 為準</td>
+            </tr>
+            <tr data-cp-row data-slug="hitachi-ltl065sm00" data-cp1="pass" data-cp2="pass" data-cp3="watch" data-overall="watch">
+              <td><a href="models/hitachi-ltl065sm00.md">Hitachi 065</a></td>
+              <td class="num">$1,800</td>
+              <td><span class="pill pill-pass">pass</span></td>
+              <td><span class="pill pill-pass">pass</span></td>
+              <td><span class="pill pill-watch">watch</span></td>
+              <td><span class="pill pill-watch">watch</span></td>
+              <td>假設一：規格對照，唔自動勝</td>
+            </tr>
+            <tr data-cp-row data-slug="whirlpool-vemc65811" data-cp1="pass" data-cp2="pass" data-cp3="watch" data-overall="watch">
+              <td><a href="models/whirlpool-vemc65811.md">Whirlpool VEMC</a></td>
+              <td class="num">$1,880</td>
+              <td><span class="pill pill-pass">pass</span></td>
+              <td><span class="pill pill-pass">pass</span></td>
+              <td><span class="pill pill-watch">watch</span></td>
+              <td><span class="pill pill-watch">watch</span></td>
+              <td>假設三：皮帶／防潮未確認</td>
+            </tr>
+            <tr data-cp-row data-slug="sharp-es-hk750x-w" data-cp1="pass" data-cp2="pass" data-cp3="watch" data-overall="watch">
+              <td><a href="models/sharp-es-hk750x-w.md">Sharp 750</a></td>
+              <td class="num">$1,980</td>
+              <td><span class="pill pill-pass">pass</span></td>
+              <td><span class="pill pill-pass">pass</span></td>
+              <td><span class="pill pill-watch">watch</span></td>
+              <td><span class="pill pill-watch">watch</span></td>
+              <td>標準耗水 120 L</td>
+            </tr>
+            <tr data-cp-row data-slug="midea-mj70n68p" data-cp1="pass" data-cp2="watch" data-cp3="watch" data-overall="watch">
+              <td><a href="models/midea-mj70n68p.md">Midea MJ70</a></td>
+              <td class="num">$1,798</td>
+              <td><span class="pill pill-pass">pass</span></td>
+              <td><span class="pill pill-watch">watch</span></td>
+              <td><span class="pill pill-watch">watch</span></td>
+              <td><span class="pill pill-watch">watch</span></td>
+              <td>文案 1 級 → EMSD 2 級</td>
+            </tr>
+            <tr data-cp-row data-slug="hitachi-ltl07sm00" data-cp1="pass" data-cp2="watch" data-cp3="watch" data-overall="watch">
+              <td><a href="models/hitachi-ltl07sm00.md">Hitachi LTL07</a></td>
+              <td class="num">$1,920</td>
+              <td><span class="pill pill-pass">pass</span></td>
+              <td><span class="pill pill-watch">watch</span></td>
+              <td><span class="pill pill-watch">watch</span></td>
+              <td><span class="pill pill-watch">watch</span></td>
+              <td>零售 1 級 → EMSD 2 級</td>
+            </tr>
+            <tr data-cp-row data-slug="hitachi-ltl08sm00" data-cp1="watch" data-cp2="watch" data-cp3="watch" data-overall="watch">
+              <td><a href="models/hitachi-ltl08sm00.md">Hitachi LTL08</a></td>
+              <td class="num">$2,080</td>
+              <td><span class="pill pill-watch">watch</span></td>
+              <td><span class="pill pill-watch">watch</span></td>
+              <td><span class="pill pill-watch">watch</span></td>
+              <td><span class="pill pill-watch">watch</span></td>
+              <td>稍超 $2k · 8kg 過剩</td>
+            </tr>
+            <tr data-cp-row data-slug="fortress-fjw75m25" data-cp1="pass" data-cp2="pass" data-cp3="fail" data-overall="fail">
+              <td><a href="models/fortress-fjw75m25.md">Fortress FJW75</a></td>
+              <td class="num">$1,780</td>
+              <td><span class="pill pill-pass">pass</span></td>
+              <td><span class="pill pill-pass">pass</span></td>
+              <td><span class="pill pill-fail">fail</span></td>
+              <td><span class="pill pill-fail">fail</span></td>
+              <td>假設二：白牌唔入主線</td>
+            </tr>
+            <tr data-cp-row data-slug="toshiba-aw-m731aph" data-cp1="pass" data-cp2="watch" data-cp3="fail" data-overall="fail">
+              <td><a href="models/toshiba-aw-m731aph.md">Toshiba M731</a></td>
+              <td class="num">$1,780</td>
+              <td><span class="pill pill-pass">pass</span></td>
+              <td><span class="pill pill-watch">watch</span></td>
+              <td><span class="pill pill-fail">fail</span></td>
+              <td><span class="pill pill-fail">fail</span></td>
+              <td>多店 1 級 → EMSD 4 級</td>
+            </tr>
+            <tr data-cp-row data-slug="fortress-fjw85m25" data-cp1="fail" data-cp2="fail" data-cp3="fail" data-overall="fail">
+              <td><a href="models/fortress-fjw85m25.md">Fortress FJW85</a></td>
+              <td class="num">$2,200</td>
+              <td><span class="pill pill-fail">fail</span></td>
+              <td><span class="pill pill-fail">fail</span></td>
+              <td><span class="pill pill-fail">fail</span></td>
+              <td><span class="pill pill-fail">fail</span></td>
+              <td>8.5kg 過殺 · 闊／排水未齊</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
@@ -1040,8 +1284,44 @@
   <footer>
     <div class="wrap">
       <div class="foot-brand">home-washer</div>
-      <p>決策軸見 <a href="2026-09-14-user-decision-ref.md">用戶決策參照</a>。資料來自 EMSD、豐澤店內相、CYE／蘇寧街價。筆記 <a href="compare.md">compare.md</a> · <a href="home-washer.sqlite">home-washer.sqlite</a>。</p>
+      <p>決策軸見 <a href="2026-09-14-user-decision-ref.md">用戶決策參照</a>。資料篩選見 <a href="2026-09-14-data-checkpoints.md">三關 checkpoint</a>。資料來自 EMSD、豐澤店內相、CYE／蘇寧街價。筆記 <a href="compare.md">compare.md</a> · <a href="home-washer.sqlite">home-washer.sqlite</a>。</p>
     </div>
   </footer>
+  <script>
+    (function () {
+      var root = document.getElementById("checkpoints");
+      if (!root) return;
+      var buttons = root.querySelectorAll("[data-cp-filter]");
+      var rows = root.querySelectorAll("[data-cp-row]");
+      var countEl = root.querySelector("[data-cp-count]");
+
+      function apply(filter) {
+        var shown = 0;
+        rows.forEach(function (row) {
+          var overall = row.getAttribute("data-overall");
+          var match = filter === "all" ||
+            (filter === "pass" && overall === "pass") ||
+            (filter === "cp1" && row.getAttribute("data-cp1") !== "pass") ||
+            (filter === "cp2" && row.getAttribute("data-cp2") !== "pass") ||
+            (filter === "cp3" && row.getAttribute("data-cp3") !== "pass");
+          row.hidden = !match;
+          if (match) shown += 1;
+        });
+        buttons.forEach(function (btn) {
+          var on = btn.getAttribute("data-cp-filter") === filter;
+          btn.classList.toggle("is-active", on);
+          btn.setAttribute("aria-pressed", on ? "true" : "false");
+        });
+        if (countEl) countEl.textContent = "顯示 " + shown + "／" + rows.length + " 部";
+      }
+
+      buttons.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          apply(btn.getAttribute("data-cp-filter"));
+        });
+      });
+      apply("all");
+    })();
+  </script>
 </body>
 </html>

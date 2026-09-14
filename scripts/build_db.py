@@ -4,10 +4,18 @@
 from __future__ import annotations
 
 import sqlite3
+import sys
+from collections import defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+SCRIPT_DIR = Path(__file__).resolve().parent
 DB_PATH = ROOT / "home-washer.sqlite"
+
+if str(SCRIPT_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRIPT_DIR))
+
+from checkpoints import attach_meta, evaluate_model  # noqa: E402
 
 SCHEMA = """
 PRAGMA foreign_keys = ON;
@@ -73,6 +81,24 @@ CREATE TABLE tco_5y (
   note            TEXT
 );
 
+CREATE TABLE checkpoint_results (
+  model_id INTEGER PRIMARY KEY REFERENCES models(id) ON DELETE CASCADE,
+  cp1      TEXT NOT NULL,   -- pass | watch | fail
+  cp2      TEXT NOT NULL,
+  cp3      TEXT NOT NULL,
+  overall  TEXT NOT NULL,
+  summary  TEXT
+);
+
+CREATE TABLE checkpoint_findings (
+  id          INTEGER PRIMARY KEY,
+  model_id    INTEGER NOT NULL REFERENCES models(id) ON DELETE CASCADE,
+  checkpoint  TEXT NOT NULL,  -- cp1 | cp2 | cp3
+  rule        TEXT NOT NULL,
+  status      TEXT NOT NULL,
+  message     TEXT NOT NULL
+);
+
 CREATE VIEW v_shortlist AS
 SELECT
   m.slug, m.brand, m.model, m.capacity_kg, m.spin_rpm, m.width_mm,
@@ -94,6 +120,32 @@ ORDER BY
     ELSE 9
   END,
   COALESCE(t.tco_hkd, min_price_hkd);
+
+CREATE VIEW v_checkpoints AS
+SELECT
+  m.slug, m.brand, m.model, m.shortlist, m.under_2000,
+  MIN(p.price_hkd) AS min_price_hkd,
+  r.cp1, r.cp2, r.cp3, r.overall, r.summary
+FROM models m
+JOIN checkpoint_results r ON r.model_id = m.id
+LEFT JOIN prices p ON p.model_id = m.id
+GROUP BY m.id
+ORDER BY
+  CASE r.overall
+    WHEN 'pass' THEN 1
+    WHEN 'watch' THEN 2
+    WHEN 'fail' THEN 3
+    ELSE 9
+  END,
+  CASE m.shortlist
+    WHEN 'primary' THEN 1
+    WHEN 'alt' THEN 2
+    WHEN 'demote' THEN 3
+    WHEN 'watch' THEN 4
+    WHEN 'drop' THEN 5
+    ELSE 9
+  END,
+  min_price_hkd;
 
 """
 
@@ -285,6 +337,31 @@ def emsd_url(ref: str | None) -> str | None:
     return f"https://www.emsd.gov.hk/energylabel/en/households/wm/select_wm_detail.php?refid={ref}"
 
 
+def _prices_by_slug() -> dict[str, list[float]]:
+    grouped: dict[str, list[float]] = defaultdict(list)
+    for slug, _channel, price, *_rest in PRICES:
+        grouped[slug].append(price)
+    return grouped
+
+
+def library_checkpoint_record(row: tuple, prices_by_slug: dict[str, list[float]]) -> dict:
+    slug = row[0]
+    rec = {
+        "slug": slug,
+        "capacity_kg": row[3],
+        "spin_rpm": row[4],
+        "width_mm": row[5],
+        "energy_grade": row[8],
+        "annual_kwh": row[9],
+        "water_l": row[10],
+        "drain": row[12],
+        "status": row[15],
+        "emsd_ref": row[18],
+        "min_price": min(prices_by_slug[slug]) if prices_by_slug.get(slug) else None,
+    }
+    return attach_meta(slug, rec)
+
+
 def main() -> None:
     if DB_PATH.exists():
         DB_PATH.unlink()
@@ -344,6 +421,29 @@ def main() -> None:
             (slug_ids[slug], slug, price, tier, p, c, exp, install, energy, tco, note),
         )
 
+    prices_by_slug = _prices_by_slug()
+    for row in MODELS:
+        rec = library_checkpoint_record(row, prices_by_slug)
+        check = evaluate_model(rec)
+        mid = slug_ids[check.slug]
+        con.execute(
+            """
+            INSERT INTO checkpoint_results (model_id, cp1, cp2, cp3, overall, summary)
+            VALUES (?,?,?,?,?,?)
+            """,
+            (mid, check.cp1.status, check.cp2.status, check.cp3.status, check.overall, check.summary),
+        )
+        for gate in (check.cp1, check.cp2, check.cp3):
+            for finding in gate.findings:
+                con.execute(
+                    """
+                    INSERT INTO checkpoint_findings (
+                      model_id, checkpoint, rule, status, message
+                    ) VALUES (?,?,?,?,?)
+                    """,
+                    (mid, gate.checkpoint, finding.rule, finding.status, finding.message),
+                )
+
     con.commit()
 
     n_models = con.execute("SELECT COUNT(*) FROM models").fetchone()[0]
@@ -355,6 +455,12 @@ def main() -> None:
         "SELECT slug, shortlist, min_price_hkd, tco_5y_hkd FROM v_shortlist ORDER BY tco_5y_hkd NULLS LAST"
     ):
         print(f"  {r[0]:28} {r[1]:8} P=${r[2] or '-':>6}  TCO₅=${r[3] or '-':>6}")
+
+    print("\nCheckpoints (CP1 入場 / CP2 核實 / CP3 決策):")
+    for r in con.execute(
+        "SELECT slug, cp1, cp2, cp3, overall FROM v_checkpoints"
+    ):
+        print(f"  {r[0]:28} {r[1]:5} {r[2]:5} {r[3]:5}  → {r[4]}")
     con.close()
 
 
