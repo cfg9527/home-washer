@@ -15,4 +15,4 @@
 | `fortress-fjw85m25.md` | ❌ | 建議淘汰 |
 
 價源：[[../2026-09-14-cyeshop-under-2000|CYE 掃瞄]]  
-新機：複製 `../_model-template.md`。
+新機：複製 `../_model-template.md`，先過 [[../2026-09-14-data-checkpoints|資料篩選三關]] 再改 `shortlist`。

@@ -23,6 +23,7 @@ review: needs-user-review
 **類型：** 日式上置／葉輪；Air Jet ≠ 熱力乾衣。  
 **價掃：** [[2026-09-14-cyeshop-under-2000|CYE]] · [[2026-09-14-suning-under-2000|蘇寧]] · [[2026-09-14-midea-toshiba-under-2000|美的／東芝]]  
 **決策軸：** [[2026-09-14-user-decision-ref|用戶 ref — MTBF／零件流通 → 東芝波輪]]  
+**篩選：** [[2026-09-14-data-checkpoints|三關 checkpoint]]（入場 → EMSD 核實 → 決策）  
 **證據／TCO：** [[2026-09-14-durability-tco|消委會＋力學＋5 年 TCO]]
 
 ## 5 年期望 TCO（摘要）
@@ -86,6 +87,18 @@ review: needs-user-review
 | 排水 | 高低 | 高低 | 高低 | 高低？ | 高⚠️ |
 | 最低見價 | **蘇寧 $1,800** | $1,880 | $1,880 | 蘇寧 $1,980 | $1,780 |
 | 開 | [[models/hitachi-ltl065sm00\|→]] | [[models/whirlpool-vemc65811\|→]] | [[models/toshiba-aw-q801aph\|→]] | [[models/sharp-es-hk750x-w\|→]] | [[models/fortress-fjw75m25\|→]] |
+
+## 資料篩選三關（摘要）
+
+完整規則同現庫過關表：[[2026-09-14-data-checkpoints]]。
+
+| 關 | 擋咩 | 本庫含義 |
+| --- | --- | --- |
+| CP1 入場 | 非日式上置、>$2.2k、>8kg、無 EMSD | FJW85 出局；LTL08 watch |
+| CP2 核實 | 零售誤標、缺闊／排水／身份 | Q751／M731／MJ70／LTL07／08 留黃；FJW85 未齊 |
+| CP3 決策 | 三假設＋能源≥3＋白牌 | 僅 Q 系可主鎖；M731／FJW75 fail |
+
+僅 **Q801** 三關 `pass`。Q751 決策關過，但蘇寧標題誤標所以總評 watch。
 
 ## 用戶條件
 
