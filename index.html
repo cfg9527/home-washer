@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>洗衣機比較 — 豐澤店內四機對照</title>
+  <meta name="description" content="香港豐澤日式上置洗衣機比較：Hitachi LTL 065／08、Fortress FJW75／85。規格、能源標籤、相片與短名單。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #0064e0;
+      --primary-deep: #0457cb;
+      --ink-button: #000000;
+      --on-ink: #ffffff;
+      --canvas: #ffffff;
+      --surface-soft: #f1f4f7;
+      --ink-deep: #0a1317;
+      --ink: #1c1e21;
+      --charcoal: #444950;
+      --steel: #5d6c7b;
+      --stone: #8595a4;
+      --hairline: #ced0d4;
+      --hairline-soft: #dee3e9;
+      --success: #31a24c;
+      --attention: #f2a918;
+      --critical: #e41e3f;
+      --warning: #f7b928;
+      --font: "Montserrat", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+      --wrap: min(1120px, calc(100% - 2.5rem));
+      --r-xxxl: 32px;
+      --r-full: 100px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      color: var(--ink);
+      background: var(--canvas);
+      line-height: 1.7;
+      font-weight: 400;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .wrap { width: var(--wrap); margin-inline: auto; }
+
+    /* —— Nav —— */
+    .nav {
+      position: absolute;
+      inset: 0 0 auto;
+      z-index: 20;
+      padding: 1.25rem 0;
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .nav-brand {
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 0.02em;
+      color: var(--on-ink);
+    }
+    .nav-brand span {
+      font-weight: 500;
+      opacity: 0.7;
+      margin-left: 0.45rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .nav-link {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.88);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+      padding-bottom: 0.1rem;
+      transition: border-color 0.3s var(--ease);
+    }
+    .nav-link:hover { border-color: #fff; }
+
+    /* —— Hero —— */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: grid;
+      align-items: end;
+      color: var(--on-ink);
+      isolation: isolate;
+      overflow: hidden;
+    }
+    .hero-media {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        linear-gradient(180deg, rgba(10, 19, 23, 0.35) 0%, rgba(10, 19, 23, 0.72) 55%, rgba(10, 19, 23, 0.88) 100%),
+        url("photos/C-shelf-three-machines.jpg") center / cover no-repeat;
+      transform: scale(1.06);
+      animation: hero-drift 18s var(--ease) infinite alternate;
+    }
+    @keyframes hero-drift {
+      from { transform: scale(1.06) translate3d(0, 0, 0); }
+      to { transform: scale(1.12) translate3d(-1.5%, -1%, 0); }
+    }
+    .hero-inner {
+      padding: 0 0 clamp(3rem, 8vw, 5.5rem);
+      max-width: 38rem;
+    }
+    .hero-brand {
+      font-size: clamp(2.4rem, 7vw, 3.75rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 0.85rem;
+      opacity: 0;
+      animation: rise 0.9s var(--ease) 0.15s forwards;
+    }
+    .hero-lead {
+      font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+      font-weight: 500;
+      line-height: 1.55;
+      max-width: 28rem;
+      margin-bottom: 0.55rem;
+      opacity: 0;
+      animation: rise 0.9s var(--ease) 0.28s forwards;
+    }
+    .hero-sub {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.78);
+      margin-bottom: 1.75rem;
+      max-width: 26rem;
+      opacity: 0;
+      animation: rise 0.9s var(--ease) 0.4s forwards;
+    }
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      opacity: 0;
+      animation: rise 0.9s var(--ease) 0.52s forwards;
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 14px 30px;
+      border-radius: var(--r-full);
+      font-size: 0.875rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      transition: background 0.25s var(--ease), color 0.25s var(--ease), border-color 0.25s var(--ease), transform 0.25s var(--ease);
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary {
+      background: var(--ink-button);
+      color: var(--on-ink);
+      border: 2px solid var(--ink-button);
+    }
+    .btn-primary:hover { background: var(--charcoal); border-color: var(--charcoal); }
+    .btn-secondary {
+      background: transparent;
+      color: var(--on-ink);
+      border: 2px solid rgba(255, 255, 255, 0.85);
+    }
+    .btn-secondary:hover { background: rgba(255, 255, 255, 0.1); }
+    .btn-buy {
+      background: var(--primary);
+      color: var(--on-ink);
+      border: 2px solid var(--primary);
+    }
+    .btn-buy:hover { background: var(--primary-deep); border-color: var(--primary-deep); }
+
+    /* —— Sections —— */
+    section { padding: 80px 0; }
+    .section-head {
+      max-width: 36rem;
+      margin-bottom: 40px;
+    }
+    .section-head h2 {
+      font-size: clamp(1.75rem, 4vw, 2.25rem);
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--ink-deep);
+      margin-bottom: 0.55rem;
+    }
+    .section-head p {
+      color: var(--steel);
+      font-size: 1rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+    }
+    .reveal.is-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* —— Shortlist —— */
+    .shortlist {
+      background: var(--surface-soft);
+    }
+    .rank-list {
+      display: grid;
+      gap: 1px;
+      background: var(--hairline-soft);
+      border: 1px solid var(--hairline-soft);
+      border-radius: var(--r-xxxl);
+      overflow: hidden;
+    }
+    .rank-row {
+      display: grid;
+      grid-template-columns: 4.5rem 1fr auto;
+      gap: 1rem;
+      align-items: center;
+      padding: 1.35rem 1.5rem;
+      background: var(--canvas);
+      transition: background 0.25s var(--ease);
+    }
+    .rank-row:hover { background: #fafbfc; }
+    .rank-stars {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--ink-deep);
+      letter-spacing: 0.04em;
+    }
+    .rank-row h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      margin-bottom: 0.2rem;
+    }
+    .rank-row p {
+      font-size: 0.95rem;
+      color: var(--steel);
+      line-height: 1.55;
+    }
+    .rank-price {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--ink-deep);
+      white-space: nowrap;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      margin-left: 0.45rem;
+      padding: 3px 10px;
+      border-radius: var(--r-full);
+      font-size: 0.8rem;
+      font-weight: 700;
+      vertical-align: middle;
+    }
+    .badge-warn { background: var(--warning); color: var(--ink-deep); }
+    .badge-ok { background: var(--success); color: #fff; }
+    .badge-alert { background: var(--attention); color: #fff; }
+
+    /* —— Compare table —— */
+    .table-shell {
+      overflow-x: auto;
+      border: 1px solid var(--hairline-soft);
+      border-radius: var(--r-xxxl);
+      background: var(--canvas);
+      -webkit-overflow-scrolling: touch;
+    }
+    table.compare {
+      width: 100%;
+      min-width: 720px;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+    table.compare th,
+    table.compare td {
+      padding: 0.95rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--hairline-soft);
+      vertical-align: top;
+    }
+    table.compare thead th {
+      background: var(--ink-deep);
+      color: var(--on-ink);
+      font-weight: 700;
+      font-size: 0.9rem;
+      position: sticky;
+      top: 0;
+    }
+    table.compare tbody th {
+      font-weight: 700;
+      color: var(--ink-deep);
+      background: var(--surface-soft);
+      white-space: nowrap;
+      width: 7.5rem;
+    }
+    table.compare tbody tr:last-child th,
+    table.compare tbody tr:last-child td { border-bottom: none; }
+    table.compare .hl {
+      font-weight: 700;
+      color: var(--ink-deep);
+    }
+    table.compare .warn { color: var(--critical); font-weight: 700; }
+    .table-note {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: var(--steel);
+    }
+
+    /* —— Models —— */
+    .model-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .tab {
+      min-height: 40px;
+      padding: 8px 16px;
+      border-radius: var(--r-full);
+      border: 1px solid var(--hairline);
+      background: var(--canvas);
+      color: var(--ink);
+      font: inherit;
+      font-size: 0.875rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.25s var(--ease), color 0.25s var(--ease), border-color 0.25s var(--ease);
+    }
+    .tab[aria-selected="true"] {
+      background: var(--ink-deep);
+      color: var(--on-ink);
+      border-color: var(--ink-deep);
+    }
+    .model-panel[hidden] { display: none; }
+    .model-layout {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    .model-photo {
+      border-radius: var(--r-xxxl);
+      overflow: hidden;
+      background: var(--surface-soft);
+      aspect-ratio: 4 / 5;
+    }
+    .model-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .model-copy h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 0.35rem;
+    }
+    .model-meta {
+      color: var(--steel);
+      margin-bottom: 1.25rem;
+      font-size: 0.95rem;
+    }
+    .spec-list {
+      display: grid;
+      gap: 0.65rem;
+      margin-bottom: 1.5rem;
+    }
+    .spec-list div {
+      display: grid;
+      grid-template-columns: 6.5rem 1fr;
+      gap: 0.75rem;
+      padding-bottom: 0.65rem;
+      border-bottom: 1px solid var(--hairline-soft);
+      font-size: 0.95rem;
+    }
+    .spec-list dt { color: var(--steel); font-weight: 500; }
+    .spec-list dd { font-weight: 700; color: var(--ink-deep); }
+    .pros-cons {
+      display: grid;
+      gap: 0.85rem;
+      font-size: 0.95rem;
+    }
+    .pros-cons strong { display: block; margin-bottom: 0.25rem; color: var(--ink-deep); }
+    .pros-cons ul { padding-left: 1.1rem; color: var(--charcoal); }
+    .pros-cons li + li { margin-top: 0.25rem; }
+
+    /* —— Photos strip —— */
+    .photos {
+      background: var(--ink-deep);
+      color: var(--on-ink);
+    }
+    .photos .section-head h2 { color: var(--on-ink); }
+    .photos .section-head p { color: rgba(255, 255, 255, 0.72); }
+    .photo-rail {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(220px, 28%);
+      gap: 1rem;
+      overflow-x: auto;
+      padding-bottom: 0.5rem;
+      scroll-snap-type: x mandatory;
+    }
+    .photo-rail a {
+      scroll-snap-align: start;
+      border-radius: var(--r-xxxl);
+      overflow: hidden;
+      aspect-ratio: 3 / 4;
+      background: #1a2428;
+      transition: transform 0.35s var(--ease);
+    }
+    .photo-rail a:hover { transform: translateY(-4px); }
+    .photo-rail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .photo-cap {
+      margin-top: 0.65rem;
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* —— Notes —— */
+    .notes-grid {
+      display: grid;
+      gap: 1rem;
+    }
+    .note {
+      padding: 1.35rem 1.5rem;
+      border-bottom: 1px solid var(--hairline-soft);
+    }
+    .note h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+    .note p { color: var(--steel); font-size: 0.95rem; }
+
+    /* —— Footer —— */
+    footer {
+      padding: 64px 0;
+      border-top: 1px solid var(--hairline-soft);
+      color: var(--steel);
+      font-size: 0.9rem;
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+    .footer-links a {
+      font-weight: 700;
+      color: var(--ink-deep);
+      border-bottom: 1px solid var(--hairline);
+    }
+    .footer-links a:hover { border-color: var(--ink-deep); }
+
+    @media (max-width: 900px) {
+      .model-layout { grid-template-columns: 1fr; }
+      .model-photo { aspect-ratio: 4 / 3; max-height: 420px; }
+      .rank-row { grid-template-columns: 3.5rem 1fr; }
+      .rank-price { grid-column: 2; }
+    }
+    @media (max-width: 640px) {
+      section { padding: 56px 0; }
+      .rank-row { padding: 1.1rem 1.15rem; }
+      .hero-brand { font-size: 2.1rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+      .hero-media { transform: none; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-media" aria-hidden="true"></div>
+    <nav class="nav" aria-label="主選單">
+      <div class="wrap nav-inner">
+        <a class="nav-brand" href="#">洗衣機比較<span>Home</span></a>
+        <a class="nav-link" href="#compare">規格對照</a>
+      </div>
+    </nav>
+    <div class="wrap hero-inner">
+      <p class="hero-brand">洗衣機比較</p>
+      <h1 class="hero-lead">豐澤店內四機，一次對齊規格與短名單。</h1>
+      <p class="hero-sub">全部係日式上置波輪。相片 → 型號 → EMSD／代理規格，等安裝條件再定案。</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#compare">睇總比較表</a>
+        <a class="btn btn-secondary" href="#models">逐機詳情</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="shortlist" id="shortlist">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>暫時短名單</h2>
+        <p>未答位闊、排水、人數、預算前，065 同 FJW75 並列優先。</p>
+      </div>
+      <div class="rank-list reveal">
+        <article class="rank-row">
+          <div class="rank-stars">★★★</div>
+          <div>
+            <h3>Hitachi LTL 065SM00</h3>
+            <p>最窄 500mm · 1級水電 · 830轉 — 窄位／慳水電第一選擇</p>
+          </div>
+          <div class="rank-price">$1,880</div>
+        </article>
+        <article class="rank-row">
+          <div class="rank-stars">★★★</div>
+          <div>
+            <h3>Fortress FJW75M25</h3>
+            <p>最平 7.5kg · 1級；轉速偏弱，價牌寫<strong>高排水</strong>要核實</p>
+          </div>
+          <div class="rank-price">$1,780</div>
+        </article>
+        <article class="rank-row">
+          <div class="rank-stars">★★☆</div>
+          <div>
+            <h3>Hitachi LTL 08SM00 <span class="badge badge-warn">能源 2 級</span></h3>
+            <p>8kg＋玻璃蓋＋品牌手感；年耗水 127L，零售有時誤標 1 級</p>
+          </div>
+          <div class="rank-price">$2,180</div>
+        </article>
+        <article class="rank-row">
+          <div class="rank-stars">★☆☆</div>
+          <div>
+            <h3>Fortress FJW85M25</h3>
+            <p>最大 8.5kg；650轉、價錢未必抵</p>
+          </div>
+          <div class="rank-price">~$2,200+</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="compare">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>規格對照</h2>
+        <p>來源：EMSD Energy Label + 店內貼紙／價牌。Air Jet 只係輔助風乾，唔係熱力乾衣。</p>
+      </div>
+      <div class="table-shell reveal">
+        <table class="compare">
+          <thead>
+            <tr>
+              <th scope="col">項目</th>
+              <th scope="col">A · LTL 065</th>
+              <th scope="col">B · LTL 08</th>
+              <th scope="col">C · FJW75</th>
+              <th scope="col">D · FJW85</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">品牌</th>
+              <td>Hitachi</td>
+              <td>Hitachi</td>
+              <td>Fortress</td>
+              <td>Fortress</td>
+            </tr>
+            <tr>
+              <th scope="row">容量</th>
+              <td class="hl">6.5 kg</td>
+              <td class="hl">8.0 kg</td>
+              <td class="hl">7.5 kg</td>
+              <td class="hl">8.5 kg</td>
+            </tr>
+            <tr>
+              <th scope="row">脫水</th>
+              <td class="hl">830 rpm</td>
+              <td class="hl">760 rpm</td>
+              <td>650 rpm</td>
+              <td>650 rpm</td>
+            </tr>
+            <tr>
+              <th scope="row">闊×高×深</th>
+              <td class="hl">500×850×535</td>
+              <td>540×892×565</td>
+              <td>~520–525×915–930×515–530</td>
+              <td>待官方尺寸</td>
+            </tr>
+            <tr>
+              <th scope="row">能源級</th>
+              <td class="hl">1 · 15 kWh</td>
+              <td class="warn">2 · 22 kWh</td>
+              <td class="hl">1 · 16 kWh</td>
+              <td class="hl">1 · 18 kWh</td>
+            </tr>
+            <tr>
+              <th scope="row">標準耗水</th>
+              <td class="hl">85 L</td>
+              <td>127 L</td>
+              <td class="hl">88 L</td>
+              <td>97 L</td>
+            </tr>
+            <tr>
+              <th scope="row">Air Jet</th>
+              <td>1.5 kg</td>
+              <td>2.0 kg</td>
+              <td>—</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <th scope="row">排水</th>
+              <td>高低一機</td>
+              <td>高低一機</td>
+              <td class="warn">價牌：高排水</td>
+              <td>待確認</td>
+            </tr>
+            <tr>
+              <th scope="row">店內價</th>
+              <td class="hl">$1,880</td>
+              <td>$2,180</td>
+              <td class="hl">$1,780</td>
+              <td>~$2,200–$2,588</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-note reveal">EMSD：U3-W250072 / U3-W250033 / U3-W250157 / U3-W250158。完整筆記見 <a href="compare.md"><u>compare.md</u></a>。</p>
+    </div>
+  </section>
+
+  <section id="models" style="background: var(--surface-soft);">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>逐機詳情</h2>
+        <p>撳型號切換店內相片與重點規格。</p>
+      </div>
+      <div class="model-tabs reveal" role="tablist" aria-label="型號">
+        <button class="tab" role="tab" id="tab-a" aria-controls="panel-a" aria-selected="true" data-panel="panel-a">LTL 065</button>
+        <button class="tab" role="tab" id="tab-b" aria-controls="panel-b" aria-selected="false" data-panel="panel-b">LTL 08</button>
+        <button class="tab" role="tab" id="tab-c" aria-controls="panel-c" aria-selected="false" data-panel="panel-c">FJW75</button>
+        <button class="tab" role="tab" id="tab-d" aria-controls="panel-d" aria-selected="false" data-panel="panel-d">FJW85</button>
+      </div>
+
+      <div class="model-panel reveal" role="tabpanel" id="panel-a" aria-labelledby="tab-a">
+        <div class="model-layout">
+          <div class="model-photo">
+            <img src="photos/A-hitachi-ltl065sm00-front.jpg" alt="Hitachi LTL 065SM00 正面與價牌" width="900" height="1125" />
+          </div>
+          <div class="model-copy">
+            <h3>Hitachi LTL 065SM00</h3>
+            <p class="model-meta">6.5kg · 5S 極細 · Smart Wash · <span class="badge badge-ok">1 級</span></p>
+            <dl class="spec-list">
+              <div><dt>闊度</dt><dd>500 mm（最窄）</dd></div>
+              <div><dt>脫水</dt><dd>830 rpm（四機最高）</dd></div>
+              <div><dt>水電</dt><dd>15 kWh／年 · 85 L</dd></div>
+              <div><dt>排水</dt><dd>高低一機</dd></div>
+              <div><dt>價錢</dt><dd>$1,880（原 $2,580）</dd></div>
+            </dl>
+            <div class="pros-cons">
+              <div>
+                <strong>優點</strong>
+                <ul>
+                  <li>位窄＋慳水電＋轉速強</li>
+                  <li>街價友好，短名單第一</li>
+                </ul>
+              </div>
+              <div>
+                <strong>風險</strong>
+                <ul>
+                  <li>6.5kg 細，被／厚外套可能要分兩次</li>
+                </ul>
+              </div>
+            </div>
+            <p style="margin-top:1.25rem"><a class="btn btn-buy" href="models/hitachi-ltl065sm00.md">開完整筆記</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="model-panel reveal" role="tabpanel" id="panel-b" aria-labelledby="tab-b" hidden>
+        <div class="model-layout">
+          <div class="model-photo">
+            <img src="photos/B-hitachi-ltl08sm00-top.jpg" alt="Hitachi LTL 08SM00 俯視與標籤" width="900" height="1125" />
+          </div>
+          <div class="model-copy">
+            <h3>Hitachi LTL 08SM00</h3>
+            <p class="model-meta">8.0kg · 玻璃蓋 · Air Jet 2kg · <span class="badge badge-warn">能源 2 級</span></p>
+            <dl class="spec-list">
+              <div><dt>闊度</dt><dd>540 mm</dd></div>
+              <div><dt>脫水</dt><dd>760 rpm</dd></div>
+              <div><dt>水電</dt><dd>22 kWh／年 · 127 L</dd></div>
+              <div><dt>排水</dt><dd>高低一機</dd></div>
+              <div><dt>價錢</dt><dd>$2,180</dd></div>
+            </dl>
+            <div class="pros-cons">
+              <div>
+                <strong>優點</strong>
+                <ul>
+                  <li>容量＋品牌手感＋玻璃蓋</li>
+                </ul>
+              </div>
+              <div>
+                <strong>風險</strong>
+                <ul>
+                  <li>官方能源 2 級；零售有時誤標 1 級</li>
+                  <li>耗水明顯高過其餘三機</li>
+                </ul>
+              </div>
+            </div>
+            <p style="margin-top:1.25rem"><a class="btn btn-buy" href="models/hitachi-ltl08sm00.md">開完整筆記</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="model-panel reveal" role="tabpanel" id="panel-c" aria-labelledby="tab-c" hidden>
+        <div class="model-layout">
+          <div class="model-photo">
+            <img src="photos/E-fortress-fjw75m25-panel.jpg" alt="Fortress FJW75M25 控制板與價牌" width="900" height="1125" />
+          </div>
+          <div class="model-copy">
+            <h3>Fortress FJW75M25</h3>
+            <p class="model-meta">7.5kg · 自有牌 · <span class="badge badge-ok">1 級</span> · <span class="badge badge-alert">高排水？</span></p>
+            <dl class="spec-list">
+              <div><dt>闊度</dt><dd>~520–525 mm（價牌）</dd></div>
+              <div><dt>脫水</dt><dd>650 rpm</dd></div>
+              <div><dt>水電</dt><dd>16 kWh／年 · 88 L</dd></div>
+              <div><dt>排水</dt><dd>價牌標高排水</dd></div>
+              <div><dt>價錢</dt><dd>$1,780（最平）</dd></div>
+            </dl>
+            <div class="pros-cons">
+              <div>
+                <strong>優點</strong>
+                <ul>
+                  <li>價錢最低，容量夠兩人日常</li>
+                  <li>能源／用水都係 1 級</li>
+                </ul>
+              </div>
+              <div>
+                <strong>風險</strong>
+                <ul>
+                  <li>轉速弱，晾衫慢啲</li>
+                  <li>低排水單位要問可唔可以裝</li>
+                </ul>
+              </div>
+            </div>
+            <p style="margin-top:1.25rem"><a class="btn btn-buy" href="models/fortress-fjw75m25.md">開完整筆記</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="model-panel reveal" role="tabpanel" id="panel-d" aria-labelledby="tab-d" hidden>
+        <div class="model-layout">
+          <div class="model-photo">
+            <img src="photos/D-fortress-75-top.jpg" alt="豐澤上置洗衣機俯視（鄰近 7.5／8.5 陳列）" width="900" height="1125" />
+          </div>
+          <div class="model-copy">
+            <h3>Fortress FJW85M25</h3>
+            <p class="model-meta">8.5kg · 已確認型號 · <span class="badge badge-ok">1 級</span></p>
+            <dl class="spec-list">
+              <div><dt>闊度</dt><dd>待官方尺寸</dd></div>
+              <div><dt>脫水</dt><dd>650 rpm</dd></div>
+              <div><dt>水電</dt><dd>18 kWh／年 · 97 L</dd></div>
+              <div><dt>排水</dt><dd>待確認</dd></div>
+              <div><dt>價錢</dt><dd>~$2,200–$2,588</dd></div>
+            </dl>
+            <div class="pros-cons">
+              <div>
+                <strong>優點</strong>
+                <ul>
+                  <li>四機入面最大容量</li>
+                </ul>
+              </div>
+              <div>
+                <strong>風險</strong>
+                <ul>
+                  <li>轉速同 FJW75 一樣弱</li>
+                  <li>價錢未必抵，優先級最低</li>
+                </ul>
+              </div>
+            </div>
+            <p style="margin-top:1.25rem"><a class="btn btn-buy" href="models/fortress-fjw85m25.md">開完整筆記</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="photos" id="photos">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>店內原圖</h2>
+        <p>A–E 五張現場相，撳圖睇大圖。</p>
+      </div>
+      <div class="photo-rail reveal">
+        <div>
+          <a href="photos/A-hitachi-ltl065sm00-front.jpg" target="_blank" rel="noopener">
+            <img src="photos/A-hitachi-ltl065sm00-front.jpg" alt="A · Hitachi 6.5 正面" loading="lazy" />
+          </a>
+          <p class="photo-cap">A · LTL 065 正面</p>
+        </div>
+        <div>
+          <a href="photos/B-hitachi-ltl08sm00-top.jpg" target="_blank" rel="noopener">
+            <img src="photos/B-hitachi-ltl08sm00-top.jpg" alt="B · Hitachi 8.0 俯視" loading="lazy" />
+          </a>
+          <p class="photo-cap">B · LTL 08 俯視</p>
+        </div>
+        <div>
+          <a href="photos/C-shelf-three-machines.jpg" target="_blank" rel="noopener">
+            <img src="photos/C-shelf-three-machines.jpg" alt="C · 貨架三機" loading="lazy" />
+          </a>
+          <p class="photo-cap">C · 貨架三機</p>
+        </div>
+        <div>
+          <a href="photos/D-fortress-75-top.jpg" target="_blank" rel="noopener">
+            <img src="photos/D-fortress-75-top.jpg" alt="D · Fortress 7.5 俯視" loading="lazy" />
+          </a>
+          <p class="photo-cap">D · FJW75 俯視</p>
+        </div>
+        <div>
+          <a href="photos/E-fortress-fjw75m25-panel.jpg" target="_blank" rel="noopener">
+            <img src="photos/E-fortress-fjw75m25-panel.jpg" alt="E · FJW75 控制板" loading="lazy" />
+          </a>
+          <p class="photo-cap">E · FJW75 價牌</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="notes">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <h2>易踩坑</h2>
+        <p>定案前先核實呢四點。</p>
+      </div>
+      <div class="notes-grid reveal">
+        <article class="note">
+          <h3>1. LTL 08 能源級別</h3>
+          <p>零售廣告有時寫「1級」——官方 EMSD 係 <strong>2 級</strong>。</p>
+        </article>
+        <article class="note">
+          <h3>2. 尺寸貼紙</h3>
+          <p>店內尺寸貼紙偶有錯（08 高標 950）——以代理規格為準。</p>
+        </article>
+        <article class="note">
+          <h3>3. FJW75 排水</h3>
+          <p>價牌寫高排水——低排水單位要問可唔可以裝。</p>
+        </article>
+        <article class="note">
+          <h3>4. 轉速差</h3>
+          <p>830 vs 650 rpm 體感可以好大，尤其回南天晾衫。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-links">
+        <a href="index.md">Markdown 索引</a>
+        <a href="compare.md">總比較表</a>
+        <a href="2026-09-12-washer-photo-intake.md">相片分析流程</a>
+        <a href="photos/README.md">相片區說明</a>
+        <a href="../wiki/index.md">Wiki 首页</a>
+      </div>
+      <p>home-washer · 香港豐澤店內影相（2026-09）· 等 grilling 答案後再出最終推薦</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var tabs = document.querySelectorAll(".tab");
+      var panels = document.querySelectorAll(".model-panel");
+
+      tabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+          var id = tab.getAttribute("data-panel");
+          tabs.forEach(function (t) {
+            t.setAttribute("aria-selected", t === tab ? "true" : "false");
+          });
+          panels.forEach(function (p) {
+            p.hidden = p.id !== id;
+          });
+        });
+      });
+
+      if ("IntersectionObserver" in window) {
+        var io = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (e) {
+              if (e.isIntersecting) {
+                e.target.classList.add("is-in");
+                io.unobserve(e.target);
+              }
+            });
+          },
+          { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+        );
+        document.querySelectorAll(".reveal").forEach(function (el) {
+          io.observe(el);
+        });
+      } else {
+        document.querySelectorAll(".reveal").forEach(function (el) {
+          el.classList.add("is-in");
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
