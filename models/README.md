@@ -3,6 +3,7 @@
 | 檔案 | ≤$2k | 重點 |
 | --- | --- | --- |
 | `toshiba-aw-q801aph.md` | ✅ CYE $1,880 | **PRIMARY** · ref 主鎖 |
+| `toshiba-aw-700j5.md` | ❌ 日本 ¥69,800 | **特例** · AC100V · 唔入主線 |
 | `toshiba-aw-q751aph.md` | ✅ CYE $1,799 | 平價東芝 |
 | `hitachi-ltl065sm00.md` | ✅ 蘇寧 $1,800 | 規格對照（非品牌耐用首選） |
 | `whirlpool-vemc65811.md` | ✅ CYE $1,880 | ref 假設三 → ALT |

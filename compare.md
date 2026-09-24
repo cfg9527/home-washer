@@ -71,6 +71,7 @@ review: needs-user-review
 | ★☆☆ | [[models/hitachi-ltl08sm00\|Hitachi LTL 08SM00]] | 蘇寧 $2,380 超帶 |
 | — | [[models/fortress-fjw85m25\|Fortress FJW85M25]] | 建議淘汰 |
 | ⏳ | Toshiba AW-J800APH 系 | ref 原例；街價常 **>$2k** · EMSD 3 級 |
+| 🔬 | [[models/toshiba-aw-700j5\|Toshiba AW-700J5]] | **日本特例** — 100V · 唔入主線 |
 
 ## 基本規格對照（≤$2k 核心）
 
@@ -94,11 +95,28 @@ review: needs-user-review
 
 | 關 | 擋咩 | 本庫含義 |
 | --- | --- | --- |
-| CP1 入場 | 非日式上置、>$2.2k、>8kg、無 EMSD | FJW85 出局；LTL08 watch |
+| CP1 入場 | 非日式上置、>$2.2k、>8kg、無 EMSD、**非 220V** | FJW85／**AW-700J5** 出局；LTL08 watch |
 | CP2 核實 | 零售誤標、缺闊／排水／身份 | Q751／M731／MJ70／LTL07／08 留黃；FJW85 未齊 |
 | CP3 決策 | 三假設＋能源≥3＋白牌 | 僅 Q 系可主鎖；M731／FJW75 fail |
 
 僅 **Q801** 三關 `pass`。Q751 決策關過，但蘇寧標題誤標所以總評 watch。
+
+## 特例：日本 AW-700J5 vs 港版 Q801
+
+詳見 [[models/toshiba-aw-700j5]]。[ジャパネット限定](https://www.japanet.co.jp/shopping/washing-machine/catslist/ATINLP000000000018200/PDW0D1300017/) 7kg 東芝（2025-05），**AC 100V** · 無 EMSD · 下取りなし ¥69,800（約 HK$3.5k+）。
+
+| 項目 | AW-700J5（日） | Q801（港） | 原機 XWM-B50 |
+| --- | --- | --- | --- |
+| 電壓 | **100V** ❌ | 220V | 220V |
+| 容量 | 7.0 | 7.0 | 5.0 |
+| 闊×深×高 | 515×**560**×**990** | 515×525×940 | **500**×515×873 |
+| 耗水 | ~113 L | 92 L | 125 L（EMSD） |
+| 脫水 | 未公開 | 680 | 850 |
+| 排水 | 日式防水盤 | 高低一機 | **高泵** |
+| 價 | ~>$3.5k | $1,880 | （舊機） |
+| 三關 | fail／fail／fail | **pass** | — |
+
+功能上 J5 有 W 淋浴洗、Ag⁺、風乾／部屋干し；港版贏喺 **能插電、有標籤、平一半以上、本地保用零件**。洞口若貼 500mm，兩者 515mm 都要側隙。
 
 ## 用戶條件
 

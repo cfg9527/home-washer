@@ -86,6 +86,11 @@ class RuleTests(unittest.TestCase):
     def test_cp1_requires_emsd(self):
         self.assertEqual(cp.eval_cp1(_base(emsd_ref=None)).status, "fail")
 
+    def test_cp1_rejects_japan_100v(self):
+        g = cp.eval_cp1(_base(mains_v=100, min_price=3600, emsd_ref=None))
+        self.assertEqual(g.status, "fail")
+        self.assertTrue(any(f.rule == "cp1.mains" and f.status == "fail" for f in g.findings))
+
     def test_cp2_resolved_conflict_is_watch(self):
         rec = _base(
             conflicts=[
@@ -150,6 +155,7 @@ class LibrarySnapshotTests(unittest.TestCase):
         "fortress-fjw75m25": ("pass", "pass", "fail", "fail"),
         "hitachi-ltl08sm00": ("watch", "watch", "watch", "watch"),
         "fortress-fjw85m25": ("fail", "fail", "fail", "fail"),
+        "toshiba-aw-700j5": ("fail", "fail", "fail", "fail"),
     }
 
     def test_every_seeded_model_has_meta(self):

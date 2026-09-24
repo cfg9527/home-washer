@@ -194,6 +194,19 @@ META: dict[str, dict[str, Any]] = {
         "line": "fortress_oem",
         "conflicts": [],
     },
+    "toshiba-aw-700j5": {
+        "form": "top_pulsator",
+        "white_label": False,
+        "belt_risk": False,
+        "brand_premium_risk": False,
+        "stainless_drum": True,
+        "damper_lid": None,
+        "warranty_machine_yr": None,
+        "warranty_motor_yr": None,
+        "line": "toshiba_jp_japanet",
+        "mains_v": 100,
+        "conflicts": [],
+    },
 }
 
 
@@ -277,6 +290,16 @@ def eval_cp1(rec: dict[str, Any]) -> GateResult:
         findings.append(_finding("cp1.emsd", "pass", f"EMSD {rec['emsd_ref']}"))
     else:
         findings.append(_finding("cp1.emsd", "fail", "無 EMSD 編號 — 規格無可核對來源"))
+
+    mains = rec.get("mains_v", 220)
+    if mains == 220:
+        findings.append(_finding("cp1.mains", "pass", "220V 港盤"))
+    elif mains == 100:
+        findings.append(
+            _finding("cp1.mains", "fail", "日本 100V — 香港 220V 唔能直插（特例對照 only）")
+        )
+    else:
+        findings.append(_finding("cp1.mains", "fail", f"電源 {mains}V 唔啱港盤"))
 
     return GateResult("cp1", worst(f.status for f in findings), tuple(findings))
 

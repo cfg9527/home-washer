@@ -30,6 +30,7 @@ tags:
 | [[2026-09-14-suning-under-2000\|蘇寧 ≤$2k 掃瞄]] | 蘇寧 $1.4k–$2.8k |
 | [[2026-09-14-midea-toshiba-under-2000\|美的／東芝 ≤$2k]] | +MJ70 · +M731 |
 | [[models/toshiba-aw-q801aph\|Toshiba AW-Q801APH]] | **主鎖** · 7.0 · 680 · $1,880 |
+| [[models/toshiba-aw-700j5\|Toshiba AW-700J5]] | **日本特例** · 7.0 · 100V · 唔入主線 |
 | [[models/toshiba-aw-q751aph\|Toshiba AW-Q751APH]] | 6.5 · 680 · CYE $1,799 |
 | [[models/hitachi-ltl065sm00\|Hitachi LTL 065SM00]] | 6.5 · 830 · 規格對照 |
 | [[models/whirlpool-vemc65811\|Whirlpool VEMC65811]] | 6.5 · 850 · ref 降 ALT |
@@ -60,6 +61,7 @@ tags:
 | B | LTL 08SM00 | CYE $2,080 | ❌／貼邊 | — |
 | D | FJW85M25 | ~$2,200+ | ❌ | — |
 | J | AW-J800APH 系 | ~$2,180+ | 常超 | ref 原例 |
+| JP | AW-700J5 | ~¥7万≈$3.5k+ | ❌ 100V | **日本特例** |
 
 ## 工作流
 
@@ -70,5 +72,6 @@ tags:
 ✅ 用戶 ref → 東芝波輪（MTBF／零件）主鎖 Q801
 ✅ 資料篩選三關（入場／EMSD 核實／決策）— 僅 Q801 全綠
 ✅ 原機 AKAI XWM-B50：500×515×873 mm · 高排水泵 · EMSD 4 級
+✅ 日本特例 AW-700J5 對照（100V · 三關 fail · 唔換機）
 ⏳ 量洞口淨闊／淨高（舊機≠洞口）＋下單核保用／送貨除舊
 ```

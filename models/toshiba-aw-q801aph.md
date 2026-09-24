@@ -79,6 +79,7 @@ review: needs-user-review
 | [[hitachi-ltl07sm00\|LTL 07]] | 東芝 1 級＋更平；07 玻璃蓋＋760 轉但 2 級＋更闊 |
 | [[hitachi-ltl065sm00\|LTL 065]] | 065 更窄／830 轉／更慳水；Q801 多容量 |
 | [[fortress-fjw75m25\|FJW75]] | 東芝高低排水明確；75 可能更平但 650 轉＋高排水風險 |
+| [[toshiba-aw-700j5\|AW-700J5]] | 日本 7kg 功能更花（Ag⁺／風乾）；**100V** — 只做特例對照 |
 
 ## 結論
 

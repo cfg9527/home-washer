@@ -229,6 +229,13 @@ MODELS = [
         "Suggested drop; panel photo incomplete",
         "models/fortress-fjw85m25.md",
     ),
+    (
+        "toshiba-aw-700j5", "Toshiba", "AW-700J5(W)",
+        7.0, None, 515, 990, 560, None, None, 113, None, "unknown", None, 0,
+        "identified", "watch", 0, None,
+        "Japan Japanet exclusive; AC100V — HK special-case compare only vs Q801",
+        "models/toshiba-aw-700j5.md",
+    ),
 ]
 
 PRICES = [
@@ -268,6 +275,9 @@ PRICES = [
     ("hitachi-ltl08sm00", "Suning", 2380, None, "2026-09-14",
      "https://product.hksuning.com/0000000000/12446695975.html", "Over $2k"),
     ("fortress-fjw85m25", "Fortress web", 2200, 3099, "2026-09-14", None, "List price band"),
+    ("toshiba-aw-700j5", "Japanet JP¥69800→HKD", 3600, None, "2026-09-24",
+     "https://www.japanet.co.jp/shopping/washing-machine/catslist/ATINLP000000000018200/PDW0D1300017/",
+     "List ¥69,800 tax-in; FX ~HK$3.5–3.7k; not HK street"),
 ]
 
 SOURCES = [
@@ -306,6 +316,12 @@ SOURCES = [
     (None, "forum", "Consumer Council #513 washer reliability",
      "https://www.consumer.org.hk/tc/article/513-appliance-reliability-survey/513-survey-wm",
      "Panasonic 16% / Whirlpool 28%; avg repair $1083; type gap slight"),
+    ("toshiba-aw-700j5", "retailer", "Japanet AW-700J5(W)",
+     "https://www.japanet.co.jp/shopping/washing-machine/catslist/ATINLP000000000018200/PDW0D1300017/",
+     "Japan domestic Japanet exclusive; AC100V"),
+    ("toshiba-aw-700j5", "official", "Toshiba Living manuals index AW-700J5",
+     "https://www.toshiba-living.jp/search_category_list.php?C=4&I=250&S=1&sc2=141",
+     "Released 2025-05"),
 ]
 
 # slug, price, tier, p, C, I, annual_kwh, note

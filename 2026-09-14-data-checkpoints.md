@@ -49,6 +49,7 @@ flowchart TD
 | `cp1.price` | 最低街價 ≤ **$2,000** | $2,001–$2,200（J800 鬆預算帶） | > $2,200 或無香港街價 |
 | `cp1.capacity` | **6.0–7.5 kg** | 8.0 kg（一人過剩）或 <6.0 kg | **>8.0 kg** |
 | `cp1.emsd` | 有 EMSD 編號 | — | 無可核對能源標籤 |
+| `cp1.mains` | **220V** 港盤 | — | **100V 日本機**（特例對照 only） |
 
 硬門檻對應已鎖定條件：一人用 · ≤ ~$2k · 日式上置。位闊／去水仍未量，**唔放呢關**（安裝係落訂核對，唔係入庫篩選）。
 
@@ -103,5 +104,6 @@ flowchart TD
 | [[models/fortress-fjw75m25\|FJW75]] | $1,780 | pass | pass | fail | **fail** | 假設二白牌 |
 | [[models/toshiba-aw-m731aph\|M731]] | $1,780 | pass | watch | fail | **fail** | EMSD 4 級 |
 | [[models/fortress-fjw85m25\|FJW85]] | $2,200 | fail | fail | fail | **fail** | 8.5 kg＋資料未齊 |
+| [[models/toshiba-aw-700j5\|AW-700J5]] | ~$3,600 | fail | fail | fail | **fail** | **日本特例** · 100V · 無 EMSD |
 
 新機流程：掃瞄 → CP1 → 建 `models/*.md` → 對 EMSD（CP2）→ 先跑三關再改 `shortlist`。模板見 [[_model-template]]。
