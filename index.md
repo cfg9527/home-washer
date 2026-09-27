@@ -15,13 +15,16 @@ tags:
 ← [[../wiki/index|Wiki 首页]] · [HTML 比較頁](index.html)
 
 一人用 · 預算 ≤ ~$2,000 · 日式／葉輪上置。  
-決策軸：[[2026-09-14-user-decision-ref|MTBF／零件流通 → 東芝波輪]]。
+決策軸：[[2026-09-14-user-decision-ref|MTBF／零件流通 → 東芝波輪]]。  
+2026-09-27：[[2026-09-27-self-review|自我 Review]] · [[2026-09-27-mainland-brands-hk|大陸牌子掃瞄]]（≤$2k 日式波輪只得美的）。
 
 ## 快速導覽
 
 | 頁面 | 說明 |
 | --- | --- |
 | [[compare\|總比較表]] | 短名單＋規格 |
+| [[2026-09-27-self-review\|自我 Review]] | 改進點／仍欠用戶 |
+| [[2026-09-27-mainland-brands-hk\|大陸牌子掃瞄]] | 美的／Comfee／海信／小米／海爾… |
 | [[2026-09-14-data-checkpoints\|資料篩選三關]] | 入場／核實／決策 checkpoint |
 | [[2026-09-14-user-decision-ref\|用戶決策參照]] | 三假設失敗模式＋東芝架構 |
 | [[2026-09-14-durability-tco\|耐用度證據＋TCO]] | 消委會 513 · 力學 · 各機 5 年 TCO |
@@ -33,7 +36,9 @@ tags:
 | [[models/hitachi-ltl065sm00\|Hitachi LTL 065SM00]] | 6.5 · 830 · 規格對照 |
 | [[models/whirlpool-vemc65811\|Whirlpool VEMC65811]] | 6.5 · 850 · ref 降 ALT |
 | [[models/sharp-es-hk750x-w\|Sharp ES-HK750X-W]] | 7.5 · 700 · 蘇寧 $1,980 |
-| [[models/midea-mj70n68p\|Midea MJ70N68P]] | 7.0 · 680 · ~$1,842 · 2級 |
+| [[models/midea-mj70n68p\|Midea MJ70N68P]] | 7.0 · 680 · ~$1,842 · **唯一大陸牌 ALT** |
+| [[models/kaneda-kt-072p\|Kaneda KT-072P]] | 7.0 · ~$1,813 · **港牌 demote** |
+| [[models/comfee-cfk01w80\|Comfee' CFK01W80]] | 歐式頂揭 · ~$3,590 · **drop** |
 | [[models/toshiba-aw-m731aph\|Toshiba AW-M731APH]] | 6.3 · 700 · $1,780 · **4級** |
 | `home-washer.sqlite` | SQLite（`python3 scripts/build_db.py`） |
 | [[models/hitachi-ltl07sm00\|Hitachi LTL 07SM00]] | 7.0 · 760 · 2級 · CYE $1,980 |
@@ -53,11 +58,13 @@ tags:
 | A | LTL 065SM00 | 蘇寧 $1,800 | ✅ | 規格對照 |
 | W | VEMC65811 | CYE $1,880 | ✅ | 假設三風險 |
 | T3 | AW-M731APH | Ecox $1,780 | ✅ | 4級降級 |
-| M | MJ70N68P | ~$1,842 | ✅ | — |
+| M | MJ70N68P | ~$1,842 | ✅ | **大陸牌 ALT** |
+| K | KT-072P | ~$1,813 | ✅ | 港牌 demote |
 | A2 | LTL 07SM00 | CYE $1,980 | ✅ | — |
 | C | FJW75M25 | $1,780 | ✅ | 白牌風險 |
 | B | LTL 08SM00 | CYE $2,080 | ❌／貼邊 | — |
 | D | FJW85M25 | ~$2,200+ | ❌ | — |
+| F | CFK01W80 | ~$3,590 | ❌ | 歐式頂揭 drop |
 | J | AW-J800APH 系 | ~$2,180+ | 常超 | ref 原例 |
 
 ## 工作流
@@ -68,5 +75,7 @@ tags:
 ✅ CYE／蘇寧／美的東芝掃瞄
 ✅ 用戶 ref → 東芝波輪（MTBF／零件）主鎖 Q801
 ✅ 資料篩選三關（入場／EMSD 核實／決策）— 僅 Q801 全綠
+✅ 大陸牌子掃瞄（2026-09-27）— ≤$2k 日式波輪只得 MJ70
+✅ 自我 Review — 定案不變；欠位闊／排水實測
 ⏳ 量位／排水／下單核保用＋送貨除舊
 ```

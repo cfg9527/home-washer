@@ -132,7 +132,7 @@ META: dict[str, dict[str, Any]] = {
         "brand_premium_risk": False,
         "stainless_drum": True,
         "damper_lid": True,
-        "warranty_machine_yr": None,
+        "warranty_machine_yr": 2,
         "warranty_motor_yr": None,
         "line": "midea",
         "conflicts": [
@@ -192,6 +192,37 @@ META: dict[str, dict[str, Any]] = {
         "warranty_machine_yr": None,
         "warranty_motor_yr": None,
         "line": "fortress_oem",
+        "conflicts": [],
+    },
+    "kaneda-kt-072p": {
+        "form": "top_pulsator",
+        "white_label": True,
+        "belt_risk": False,
+        "brand_premium_risk": False,
+        "stainless_drum": True,
+        "damper_lid": False,
+        "warranty_machine_yr": 1,
+        "warranty_motor_yr": None,
+        "line": "kaneda_oem",
+        "conflicts": [
+            {
+                "field": "energy_grade",
+                "retailer": "電氣通文案寫 1 級",
+                "official": "官網／側欄 3 級；未綁 EMSD 明細",
+                "emsd_wins": True,
+            }
+        ],
+    },
+    "comfee-cfk01w80": {
+        "form": "top_euro",
+        "white_label": False,
+        "belt_risk": False,
+        "brand_premium_risk": False,
+        "stainless_drum": True,
+        "damper_lid": True,
+        "warranty_machine_yr": 2,
+        "warranty_motor_yr": 10,
+        "line": "comfee_midea",
         "conflicts": [],
     },
 }

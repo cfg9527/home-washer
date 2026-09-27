@@ -21,10 +21,11 @@ review: needs-user-review
 
 **場景：** 豐澤店相＋日立官網＋[CYE](https://www.cyeshop.com/540-Tub-Washers)＋[蘇寧 $1.4k–$2.8k](https://search.hksuning.com/search/list?ci=503369&cf=1400_2800)  
 **類型：** 日式上置／葉輪；Air Jet ≠ 熱力乾衣。  
-**價掃：** [[2026-09-14-cyeshop-under-2000|CYE]] · [[2026-09-14-suning-under-2000|蘇寧]] · [[2026-09-14-midea-toshiba-under-2000|美的／東芝]]  
+**價掃：** [[2026-09-14-cyeshop-under-2000|CYE]] · [[2026-09-14-suning-under-2000|蘇寧]] · [[2026-09-14-midea-toshiba-under-2000|美的／東芝]] · [[2026-09-27-mainland-brands-hk|大陸牌子]]  
 **決策軸：** [[2026-09-14-user-decision-ref|用戶 ref — MTBF／零件流通 → 東芝波輪]]  
 **篩選：** [[2026-09-14-data-checkpoints|三關 checkpoint]]（入場 → EMSD 核實 → 決策）  
-**證據／TCO：** [[2026-09-14-durability-tco|消委會＋力學＋5 年 TCO]]
+**證據／TCO：** [[2026-09-14-durability-tco|消委會＋力學＋5 年 TCO]]  
+**Review：** [[2026-09-27-self-review|2026-09-27 自我 Review]]（定案不變）
 
 ## 5 年期望 TCO（摘要）
 
@@ -41,6 +42,7 @@ review: needs-user-review
 | [[models/fortress-fjw75m25\|FJW75]] | 1,780 | 220 | 96 | 100 | **2,196** |
 | [[models/sharp-es-hk750x-w\|Sharp750]] | 1,980 | 120 | 108 | 0 | **2,208** |
 | [[models/hitachi-ltl07sm00\|LTL07]] | 1,980 | 132 | 114 | 0 | **2,226** |
+| [[models/kaneda-kt-072p\|KT-072P]] | 1,813 | 220 | 180 | 0 | **~2,213** |
 | 平價前置對照 | 2,100 | 270 | ~150 | 200 | **~2,720** |
 
 惠而浦 $p_{5y}=0.16$ 直接取自[消委會 513](https://www.consumer.org.hk/tc/article/513-appliance-reliability-survey/513-survey-wm)；維修基準 ≈$1,083。類型（波輪 vs 前置）毛病率差距喺 513 **輕微** — 架構優勢另見力學節。
@@ -66,10 +68,12 @@ review: needs-user-review
 | ★★☆ | [[models/sharp-es-hk750x-w\|Sharp ES-HK750X-W]] | 蘇寧 $1,980 · 7.5kg；**水 120L** |
 | ★★☆ | [[models/hitachi-ltl07sm00\|Hitachi LTL 07SM00]] | 玻璃蓋；能源 2 級 |
 | ★☆☆ | [[models/fortress-fjw75m25\|Fortress FJW75M25]] | $1,780；高排水；白牌零件風險 |
-| ★☆☆ | [[models/midea-mj70n68p\|Midea MJ70N68P]] | ~$1,842；7kg·**2 級** |
+| ★☆☆ | [[models/midea-mj70n68p\|Midea MJ70N68P]] | ~$1,842；7kg·**2 級** · **唯一大陸牌 ALT** |
 | ★☆☆ | [[models/toshiba-aw-m731aph\|Toshiba AW-M731APH]] | Ecox $1,780；**EMSD 4 級** |
 | ★☆☆ | [[models/hitachi-ltl08sm00\|Hitachi LTL 08SM00]] | 蘇寧 $2,380 超帶 |
 | — | [[models/fortress-fjw85m25\|Fortress FJW85M25]] | 建議淘汰 |
+| — | [[models/kaneda-kt-072p\|Kaneda KT-072P]] | ~$1,813；港牌·**3 級**·1 年保用 → demote |
+| — | [[models/comfee-cfk01w80\|Comfee' CFK01W80]] | 歐式頂揭·~$3,590 → drop |
 | ⏳ | Toshiba AW-J800APH 系 | ref 原例；街價常 **>$2k** · EMSD 3 級 |
 
 ## 基本規格對照（≤$2k 核心）
@@ -116,7 +120,8 @@ review: needs-user-review
 | **跟 ref 主鎖** | **Toshiba AW-Q801APH（$1,880 · TCO₅≈$2,060）** |
 | 更低 TCO 東芝 | Q751（TCO₅≈$1,985）— 接受 6.5kg |
 | 規格對照 | 065（TCO 接近；闊／轉速勝） |
-| TCO 明顯較差 | VEMC、FJW75、Sharp、LTL07；平價前置對照 |
+| **大陸牌子** | 只得 [[models/midea-mj70n68p\|MJ70]]（2 級 ALT）；海爾／小天鵝無貨；海信／小米係前置 |
+| TCO 明顯較差 | VEMC、FJW75、Sharp、LTL07、金田；平價前置對照 |
 | ref 原例 J800 | 常超 $2k；預算鬆先再鎖 |
 
-**定案：** ≤$2k 主鎖 Q801（或 TCO 更平嘅 Q751）；下單核 2年／摩打5年＋送貨除舊；量 515mm。證據見 [[2026-09-14-durability-tco]]。
+**定案：** ≤$2k 主鎖 Q801（或 TCO 更平嘅 Q751）；下單核 2年／摩打5年＋送貨除舊；量 515mm。證據見 [[2026-09-14-durability-tco]]。大陸牌子掃瞄見 [[2026-09-27-mainland-brands-hk]]；自我 Review 見 [[2026-09-27-self-review]]。

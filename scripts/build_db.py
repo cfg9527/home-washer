@@ -229,6 +229,20 @@ MODELS = [
         "Suggested drop; panel photo incomplete",
         "models/fortress-fjw85m25.md",
     ),
+    (
+        "kaneda-kt-072p", "Kaneda", "KT-072P",
+        7.0, 743, 520, 900, 530, 3, None, None, None, "high_low", None, 1,
+        "identified", "demote", 1, None,
+        "HK brand / China-made; official Grade 3; 1y warranty; no EMSD bind — not mainland brand",
+        "models/kaneda-kt-072p.md",
+    ),
+    (
+        "comfee-cfk01w80", "Comfee'", "CFK01W80",
+        8.0, 1300, 400, 875, 610, 1, 73, 42, 0.03525, "unknown", None, 1,
+        "identified", "drop", 0, "U3-W240093",
+        "Midea sub-brand euro top-load; Fortress ~$3590; wrong form for shortlist",
+        "models/comfee-cfk01w80.md",
+    ),
 ]
 
 PRICES = [
@@ -268,6 +282,16 @@ PRICES = [
     ("hitachi-ltl08sm00", "Suning", 2380, None, "2026-09-14",
      "https://product.hksuning.com/0000000000/12446695975.html", "Over $2k"),
     ("fortress-fjw85m25", "Fortress web", 2200, 3099, "2026-09-14", None, "List price band"),
+    ("kaneda-kt-072p", "Electric Tung FPS", 1813, 2998, "2026-09-27",
+     "https://www.electrictung.com/washers/kt-072p", "Other pay ~$1869; official Grade 3"),
+    ("kaneda-kt-072p", "YOHO", 1889, None, "2026-09-27",
+     "https://www.yohohongkong.com/zh-hk/product/33563-%E9%87%91%E7%94%B0-Kaneda-KT-072P-%E5%85%A8%E8%87%AA%E5%8B%95%E6%B4%97%E8%A1%A3%E6%A9%9F-%E9%A6%99%E6%B8%AF%E8%A1%8C%E8%B2%A8",
+     None),
+    ("comfee-cfk01w80", "Fortress / BigGo", 3590, 6590, "2026-09-27",
+     "https://www.fortress.com.hk/en/product/cfk01w80-invertor-top-loading-washing-machine-8kg-top-load-washer/p/BP_13855614",
+     "Euro top-load; street ~$3590"),
+    ("midea-mj70n68p", "Electric Tung FPS", 1842, 2789, "2026-09-27",
+     "https://www.electrictung.com/tub-washers/mj70n68p", "Reconfirmed in stock"),
 ]
 
 SOURCES = [
@@ -301,8 +325,13 @@ SOURCES = [
      "https://www.emsd.gov.hk/energylabel/en/households/wm/select_wm_detail.php?refid=U3-W210074", None),
     ("toshiba-aw-m731aph", "emsd", "EMSD U3-W220055",
      "https://www.emsd.gov.hk/energylabel/en/households/wm/select_wm_detail.php?refid=U3-W220055", None),
+    ("comfee-cfk01w80", "emsd", "EMSD U3-W240093",
+     "https://www.emsd.gov.hk/energylabel/en/households/wm/select_wm_detail.php?refid=U3-W240093",
+     "Comfee' via Toshiba HK as information provider"),
     (None, "retailer", "Midea/Toshiba ≤$2k scan notes",
      None, "2026-09-14-midea-toshiba-under-2000.md"),
+    (None, "retailer", "Mainland brands HK availability scan",
+     None, "2026-09-27-mainland-brands-hk.md"),
     (None, "forum", "Consumer Council #513 washer reliability",
      "https://www.consumer.org.hk/tc/article/513-appliance-reliability-survey/513-survey-wm",
      "Panasonic 16% / Whirlpool 28%; avg repair $1083; type gap slight"),
@@ -328,6 +357,8 @@ TCO_ROWS = [
     ("sharp-es-hk750x-w", 1980, "C", 0.12, 1000, 0, 18, None),
     ("hitachi-ltl08sm00", 2080, "B", 0.11, 1200, 0, 22, None),
     ("fortress-fjw85m25", 2200, "F", 0.22, 1000, 100, 18, None),
+    ("kaneda-kt-072p", 1813, "F", 0.22, 1000, 0, 30,
+     "Grade 3 proxy kWh rough; white-label / 1y warranty"),
 ]
 
 
