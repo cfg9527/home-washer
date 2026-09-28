@@ -105,7 +105,8 @@ flowchart TD
 | [[models/fortress-fjw85m25\|FJW85]] | $2,200 | fail | fail | fail | **fail** | 8.5 kg＋資料未齊 |
 | [[models/kaneda-kt-072p\|KT-072P]] | $1,813 | fail | fail | fail | **fail** | 無 EMSD＋3 級＋港牌白牌風險 |
 | [[models/comfee-cfk01w80\|CFK01W80]] | $3,590 | fail | fail | fail | **fail** | 歐式頂揭＋超預算 |
+| [[models/mijia-wm090mja08hk\|WM090]] | $2,699 | fail | pass | watch | **fail** | 小米前置 9kg；類型＋預算出局 |
 
 新機流程：掃瞄 → CP1 → 建 `models/*.md` → 對 EMSD（CP2）→ 先跑三關再改 `shortlist`。模板見 [[_model-template]]。
 
-大陸牌子可買性（美的／Comfee／海信／小米／海爾…）見 [[2026-09-27-mainland-brands-hk]]。
+大陸牌子可買性見 [[2026-09-27-mainland-brands-hk]]；小米專核見 [[2026-09-28-xiaomi-mijia-hk]]。
