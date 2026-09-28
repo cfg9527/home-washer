@@ -243,6 +243,13 @@ MODELS = [
         "Midea sub-brand euro top-load; Fortress ~$3590; wrong form for shortlist",
         "models/comfee-cfk01w80.md",
     ),
+    (
+        "mijia-wm090mja08hk", "mijia", "WM090MJA08HK",
+        9.0, 1200, 598, 850, 535, 1, 83, 39, 0.03540, "high", None, 0,
+        "complete", "drop", 0, "U3-W260027",
+        "Xiaomi HK front-load 9kg; Fortress/retail ~$2699 as QMP4682HK; not Japanese pulsator",
+        "models/mijia-wm090mja08hk.md",
+    ),
 ]
 
 PRICES = [
@@ -292,6 +299,12 @@ PRICES = [
      "Euro top-load; street ~$3590"),
     ("midea-mj70n68p", "Electric Tung FPS", 1842, 2789, "2026-09-27",
      "https://www.electrictung.com/tub-washers/mj70n68p", "Reconfirmed in stock"),
+    ("mijia-wm090mja08hk", "Fortress / BigGo", 2699, None, "2026-09-28",
+     "https://biggo.hk/s/%E7%B1%B3%E5%AE%B6%E6%B4%97%E8%A1%A3%E6%A9%9F",
+     "Also listed as QMP4682HK"),
+    ("mijia-wm090mja08hk", "Centralfield", 2699, None, "2026-09-28",
+     "https://centralfield.com/product/21736/xiaomi-mijia-front-load-washing-machine-9kg-wm090mja08hk",
+     None),
 ]
 
 SOURCES = [
@@ -328,10 +341,15 @@ SOURCES = [
     ("comfee-cfk01w80", "emsd", "EMSD U3-W240093",
      "https://www.emsd.gov.hk/energylabel/en/households/wm/select_wm_detail.php?refid=U3-W240093",
      "Comfee' via Toshiba HK as information provider"),
+    ("mijia-wm090mja08hk", "emsd", "EMSD U3-W260027",
+     "https://www.emsd.gov.hk/energylabel/en/households/wm/select_wm_detail.php?refid=U3-W260027",
+     "Xiaomi as information provider"),
     (None, "retailer", "Midea/Toshiba ≤$2k scan notes",
      None, "2026-09-14-midea-toshiba-under-2000.md"),
     (None, "retailer", "Mainland brands HK availability scan",
      None, "2026-09-27-mainland-brands-hk.md"),
+    (None, "retailer", "Xiaomi/Mijia HK washer check",
+     None, "2026-09-28-xiaomi-mijia-hk.md"),
     (None, "forum", "Consumer Council #513 washer reliability",
      "https://www.consumer.org.hk/tc/article/513-appliance-reliability-survey/513-survey-wm",
      "Panasonic 16% / Whirlpool 28%; avg repair $1083; type gap slight"),

@@ -74,6 +74,7 @@ review: needs-user-review
 | — | [[models/fortress-fjw85m25\|Fortress FJW85M25]] | 建議淘汰 |
 | — | [[models/kaneda-kt-072p\|Kaneda KT-072P]] | ~$1,813；港牌·**3 級**·1 年保用 → demote |
 | — | [[models/comfee-cfk01w80\|Comfee' CFK01W80]] | 歐式頂揭·~$3,590 → drop |
+| — | [[models/mijia-wm090mja08hk\|mijia WM090MJA08HK]] | 前置 9kg·**$2,699** → drop（詳 [[2026-09-28-xiaomi-mijia-hk\|小米核對]]） |
 | ⏳ | Toshiba AW-J800APH 系 | ref 原例；街價常 **>$2k** · EMSD 3 級 |
 
 ## 基本規格對照（≤$2k 核心）

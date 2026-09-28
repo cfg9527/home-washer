@@ -225,6 +225,18 @@ META: dict[str, dict[str, Any]] = {
         "line": "comfee_midea",
         "conflicts": [],
     },
+    "mijia-wm090mja08hk": {
+        "form": "front_loader",
+        "white_label": False,
+        "belt_risk": False,
+        "brand_premium_risk": False,
+        "stainless_drum": True,
+        "damper_lid": True,
+        "warranty_machine_yr": 2,
+        "warranty_motor_yr": 12,
+        "line": "mijia_front",
+        "conflicts": [],
+    },
 }
 
 
