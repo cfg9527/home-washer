@@ -25,6 +25,7 @@ tags:
 | [[compare\|總比較表]] | 短名單＋規格 |
 | [[2026-09-27-self-review\|自我 Review]] | 改進點／仍欠用戶 |
 | [[2026-09-27-mainland-brands-hk\|大陸牌子掃瞄]] | 美的／Comfee／海信／小米／海爾… |
+| [[2026-09-28-xiaomi-mijia-hk\|小米／米家核對]] | 港行前置 $2,699 起 · 無日式波輪 |
 | [[2026-09-14-data-checkpoints\|資料篩選三關]] | 入場／核實／決策 checkpoint |
 | [[2026-09-14-user-decision-ref\|用戶決策參照]] | 三假設失敗模式＋東芝架構 |
 | [[2026-09-14-durability-tco\|耐用度證據＋TCO]] | 消委會 513 · 力學 · 各機 5 年 TCO |
@@ -39,6 +40,7 @@ tags:
 | [[models/midea-mj70n68p\|Midea MJ70N68P]] | 7.0 · 680 · ~$1,842 · **唯一大陸牌 ALT** |
 | [[models/kaneda-kt-072p\|Kaneda KT-072P]] | 7.0 · ~$1,813 · **港牌 demote** |
 | [[models/comfee-cfk01w80\|Comfee' CFK01W80]] | 歐式頂揭 · ~$3,590 · **drop** |
+| [[models/mijia-wm090mja08hk\|mijia WM090MJA08HK]] | 前置 9kg · **$2,699** · **drop** |
 | [[models/toshiba-aw-m731aph\|Toshiba AW-M731APH]] | 6.3 · 700 · $1,780 · **4級** |
 | `home-washer.sqlite` | SQLite（`python3 scripts/build_db.py`） |
 | [[models/hitachi-ltl07sm00\|Hitachi LTL 07SM00]] | 7.0 · 760 · 2級 · CYE $1,980 |
@@ -65,6 +67,7 @@ tags:
 | B | LTL 08SM00 | CYE $2,080 | ❌／貼邊 | — |
 | D | FJW85M25 | ~$2,200+ | ❌ | — |
 | F | CFK01W80 | ~$3,590 | ❌ | 歐式頂揭 drop |
+| X | WM090MJA08HK | **$2,699** | ❌ | 小米前置 drop |
 | J | AW-J800APH 系 | ~$2,180+ | 常超 | ref 原例 |
 
 ## 工作流
@@ -76,6 +79,7 @@ tags:
 ✅ 用戶 ref → 東芝波輪（MTBF／零件）主鎖 Q801
 ✅ 資料篩選三關（入場／EMSD 核實／決策）— 僅 Q801 全綠
 ✅ 大陸牌子掃瞄（2026-09-27）— ≤$2k 日式波輪只得 MJ70
+✅ 小米港行核對（2026-09-28）— 前置 $2,699 起；無日式波輪
 ✅ 自我 Review — 定案不變；欠位闊／排水實測
 ⏳ 量位／排水／下單核保用＋送貨除舊
 ```

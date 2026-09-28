@@ -13,6 +13,8 @@ related:
   - "[[models/midea-mj70n68p|MJ70N68P]]"
   - "[[models/kaneda-kt-072p|KT-072P]]"
   - "[[models/comfee-cfk01w80|CFK01W80]]"
+  - "[[models/mijia-wm090mja08hk|WM090MJA08HK]]"
+  - "[[2026-09-28-xiaomi-mijia-hk|小米核對]]"
   - "[[2026-09-27-self-review|自我 Review]]"
 review: needs-user-review
 ---
@@ -28,7 +30,7 @@ review: needs-user-review
 
 ## 一句結論
 
-≤$2k 日式波輪帶，香港真正有貨、有代理嘅大陸牌子 **幾乎只得美的 MJ70N68P**。海爾／小天鵝日式波輪喺主流渠道幾乎搵唔到；海信／小米／TCL 喺港主打前置／洗乾，唔入本庫 CP1。
+≤$2k 日式波輪帶，香港真正有貨、有代理嘅大陸牌子 **幾乎只得美的 MJ70N68P**。海爾／小天鵝日式波輪喺主流渠道幾乎搵唔到；海信／**小米**／TCL 喺港主打前置／洗乾，唔入本庫 CP1（小米詳核：[[2026-09-28-xiaomi-mijia-hk]]）。
 
 ## 牌子矩陣
 
@@ -37,7 +39,7 @@ review: needs-user-review
 | **美的 Midea** | ✅ [[models/midea-mj70n68p\|MJ70N68P]] ~$1,842（電氣通／hkele／HKTVmall） | 豐澤有美的牌；前置／洗乾另線 | **唯一合規大陸牌 ALT**（能源 2 級） |
 | **Comfee'（美的子牌）** | ❌ 類型唔啱 | [[models/comfee-cfk01w80\|CFK01W80]] 歐式頂揭 8kg · 豐澤街價約 **$3,590**（牌價 $6,590）· EMSD 1 級 · 代理資料提供者係東芝香港 | CP1 `form` fail（非葉輪）＋超預算 |
 | **海信 Hisense** | ❌ 無口徑日式波輪 | 官網／蘇寧：WD3I8545VWF、WF1I8542BWP 等**前置／洗乾** | 類型出局 |
-| **小米／米家** | ❌ 無口徑日式波輪行貨 | 豐澤／小米 HK：前置 9kg、洗烘 10.5kg 等 | 類型出局 |
+| **小米／米家** | ❌ **無日式波輪行貨** | 港行全係前置／洗乾：詳見 [[2026-09-28-xiaomi-mijia-hk\|小米核對]] · 代表機 [[models/mijia-wm090mja08hk\|WM090MJA08HK]] **$2,699** | CP1 類型＋預算 fail → **drop** |
 | **海爾 Haier** | ❌ 主流渠道無洗衣機上架 | 本地多見冷氣；洗衣機要靠水貨／非主流 | 唔入庫 |
 | **小天鵝 Little Swan** | ❌ 無正規港行 | 大陸強勢；香港零售鏈幾乎無 | 唔入庫 |
 | **TCL** | ❌ 豐澤品類以電視為主 | 未見洗衣機正規短名單 | 唔入庫 |

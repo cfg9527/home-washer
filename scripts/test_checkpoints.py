@@ -152,6 +152,7 @@ class LibrarySnapshotTests(unittest.TestCase):
         "fortress-fjw85m25": ("fail", "fail", "fail", "fail"),
         "kaneda-kt-072p": ("fail", "fail", "fail", "fail"),
         "comfee-cfk01w80": ("fail", "fail", "fail", "fail"),
+        "mijia-wm090mja08hk": ("fail", "pass", "watch", "fail"),
     }
 
     def test_every_seeded_model_has_meta(self):
